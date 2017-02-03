@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1.
+    #{title}
+  form#formAddBlob(name="addUser",method="post",action="/users")
+    p Name: 
+      input#inputName(type="text", placeholder="ex. John", name="name")
+    p Last Name: 
+      input#inputLastName(type="text", placeholder="ex. Smith", name="last_name")
+    p Username: 
+      input#inputUserName(type="text", placeholder="ex. jsmith", name="username")
+    p Password: 
+      input#inputPassword(type="text", placeholder="ex. pass1234", name="password")
+    p Email:
+      input#inputBadge(type="text", placeholder="ex. name@server.com", name="email")
+    p
+      button#btnSubmit(type="submit") submit
