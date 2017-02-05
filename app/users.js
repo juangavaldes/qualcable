@@ -30,7 +30,7 @@ router.route('/')
                   res.format({
                       //HTML response will render the index.jade file in the views/users folder. We are also setting "users" to be an accessible variable in our jade view
                     html: function(){
-                        res.render('users/index', {
+                        res.render('pages/users', {
                               title: 'All my Users',
                               "users" : users
                           });
@@ -82,8 +82,8 @@ router.route('/')
     });
 
 /* GET New User page. */
-router.get('/new', function(req, res) {
-    res.render('users/new', { title: 'Add New User' });
+router.get('/newUser', function(req, res) {
+    res.render('pages/users', { title: 'Add New User' });
 });
 
 // route middleware to validate :id
