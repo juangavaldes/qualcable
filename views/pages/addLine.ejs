@@ -8,23 +8,29 @@
 		<form action="/addLine" method="POST">
 			<div class="form-group">
 				<label>Address Line 1</label>
-				<input type="text" name="addLine1" class="form-control">
+				<input type="text" name="addLine1" class="form-control" placeholder="ex. South St. Alamo">
 			</div>
 			<div class="form-group">
 				<label>Address Line 2</label>
-				<input type="text" name="addLine2" class="form-control">
+				<input type="text" name="addLine2" class="form-control" placeholder="ex. Apt#">
 			</div>
 			<div class="form-group">
 				<label>State</label>
-				<select name="state" class="form-control">
+				<select name="state" class="form-control" placeholder="ex. Florida">
+					<option>Chicago</option>
+					<option>Florida</option>
+				</select>
 			</div>
 			<div class="form-group">
 				<label>City</label>
-				<select name="city" class="form-control">
+				<select name="city" class="form-control" placeholder="ex. Doral">
+					<option>Doral</option>
+					<option>Miami</option>
+				</select>
 			</div>
 			<div class="form-group">
 				<label>ZIP Code</label>
-				<input type="text" name="zipcode" class="form-control">
+				<input type="text" name="zipcode" class="form-control" placeholder="ex. 41225">
 			</div>
 			<div class="form-group text-right">
 				<button type="submit" class="btn btn-primary btn-lng">Search</button>

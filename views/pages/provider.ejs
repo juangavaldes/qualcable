@@ -1,0 +1,23 @@
+<%- contentFor('hero') %>
+<div class-'jumbotron text-center'>
+	<h1 align="center">Address Line Details</h1>
+	<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<h2>Add new Provider</h2>
+
+		<form name="addProvider" action="/provider" method="POST">
+			<div class="form-group">
+				<label>Provider Name</label>
+				<input type="text" name="providerName" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Zip Code</label>
+				<input type="text" name="zipCode" class="form-control">
+			</div>			
+			<div class="form-group text-right">
+				<button type="submit" class="btn btn-primary btn-lng">Add</button>
+			</div>
+		</form>
+	</div>
+	</div>
+</div>

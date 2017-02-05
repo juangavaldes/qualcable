@@ -41,3 +41,18 @@ router.get('/addLine',function(req,res){
 router.post('/addLine',function(req,res){
 	res.send('Thanks for contacting us, '+req.body.name+'| We will respond shortly');
 });
+
+//route for our results page
+router.get('/results',function(req,res){
+	res.render('pages/results');
+});
+
+//route for our results page
+router.get('/providers',function(req,res){
+	res.render('pages/provider');
+});
+
+//route for our results page
+router.get('/prices',function(req,res){
+	res.render('pages/price');
+});
