@@ -1,21 +1,33 @@
 {
-  "name": "qualconnection",
-  "version": "0.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "node-login",
+  "version": "1.5.0",
+  "description": "A template for quickly building login systems on top of Node.js & MongoDb",
+  "author": "Stephen Braitsch <stephen@braitsch.io>",
+  "website": {
+    "url": "https://nodejs-login.herokuapp.com"
   },
-  "author": "",
-  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:braitsch/node-login.git"
+  },
   "dependencies": {
-    "express": "~4.14.1",
-    "mongoose": "~4.8.1",
-    "nodemon": "~1.11.0",
-    "body-parser": "~1.16.0",
-    "cookie-parser": "~1.4.3",
-    "ejs": "~2.5.5",
-    "express-ejs-layouts": "~2.2.0",
-    "method-override": "~2.3.7"
+    "body-parser": "1.14.1",
+    "connect-mongo": "0.8.2",
+    "cookie-parser": "1.4.0",
+    "emailjs": "^1.0.4",
+    "errorhandler": "1.4.2",
+    "express": "4.13.3",
+    "express-session": "1.11.3",
+    "jade": "1.11.0",
+    "moment": "2.10.3",
+    "mongodb": "2.0.45",
+    "stylus": "0.52.4",
+    "nodemon": "~1.11.0"
+  },
+  "engines": {
+    "node": "4.2.1"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }
