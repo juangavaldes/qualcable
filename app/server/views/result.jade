@@ -1,0 +1,52 @@
+extends layout
+service=typeof(sdata) != 'undefined' ? sdata : { }
+// store the userId on the client side in a hidden input field //
+input(type='hidden', value= user._id)#userId
+
+block content
+
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			.navbar-header
+				.navbar-brand Control Panel
+			ul.nav.navbar-nav.navbar-right
+				li
+					.navbar-btn#btn-logout.btn.btn-default
+						| Sign Out
+
+	#result.center-vertical
+		div.content
+			div.col-md-6
+				div.table-responsive
+					table#tblproviders.table-striped.table
+						thead
+							tr
+								th Provider
+								th ZIP
+								th Zone
+								th Price
+						tbody
+							for service in sdata
+								tr
+									td= service.provider
+									td= service.zip
+									td= service.zone
+									td
+										input(type='radio', class='inputRad', name='inputRad', value=0, checked='')
+					table#tblprices.table-striped.table
+						thead
+							tr 
+								th Speed
+								th Price
+								th Select
+						tbody
+	include modals/form-errors
+	include modals/alert
+	include modals/confirm
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/search.js')
+	script(src='/js/controllers/searchController.js')
+	script(src='/js/form-validators/searchValidator.js')

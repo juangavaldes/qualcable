@@ -1,0 +1,52 @@
+extends layout
+user = typeof(udata) != 'undefined' ? udata : { }
+block content
+
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			.navbar-header
+				.navbar-brand Control Panel
+			ul.nav.navbar-nav.navbar-right
+				li
+					.navbar-btn#btn-logout.btn.btn-default
+						| Sign Out
+
+	#login.center-vertical
+		form.well(id='search-form', method='post')
+			h2 Submit a Search
+			h6 Services will be displayed based on the Informatinon
+			.form-group
+				label Address Line 1
+				input.form-control(type='text', id='add1-tf', name='add1')
+			.form-group
+				label Address Line 2
+				input.form-control(type='text', id='add2-tf', name='add2')
+			.form-group
+				label.control-label.col-sm-3 State
+				.col-sm-9
+				select.form-control#state-list(name='state')
+					each state in states
+						option()=state.name
+			.form-group
+				label.control-label.col-sm-3 City
+				.col-sm-9
+				select.form-control#city-list(name='city')
+					each city in cities
+						option()=city.name
+			.form-group
+				label Zip Code
+				input.form-control(type='text', id='zip-tf', name='zip')
+			.form-buttons
+				button(type='button')#search-form-btn1.btn.btn-default
+				button(type='submit')#search-form-btn2.btn.btn-primary
+			.clearfix
+	include modals/form-errors
+	include modals/alert
+	include modals/confirm
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/search.js')
+	script(src='/js/controllers/searchController.js')
+	script(src='/js/form-validators/searchValidator.js')
