@@ -9,7 +9,10 @@ $(document).ready(function(){
 			return av.validateForm();
 		},
 		success	: function(responseText, status, xhr, $form){
-			if (status == 'success') $('.modal-alert').modal('show');
+			if (status == 'success'){
+				sc.onUpdateSuccess();
+				window.location.href = '/result';
+			}
 		},
 		error : function(e){
 			if (e.responseText == 'email-taken'){
@@ -19,7 +22,7 @@ $(document).ready(function(){
 			}
 		}
 	});
-	$('#name-tf').focus();
+	$('#zip-tf').focus();
 	
 // customize the account signup form //
 	

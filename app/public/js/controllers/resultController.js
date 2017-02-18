@@ -1,4 +1,4 @@
-function HomeController()
+function ResultController()
 {
 // bind event listeners to button clicks //
 	var that = this;
@@ -6,27 +6,30 @@ function HomeController()
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
 
-// confirm account deletion //
-	$('#account-form-btn1').click(function(){$('.modal-confirm').modal('show')});
+// handle table click//
+	$('#tblproviders').on('click-row.bs.table',function(){ that.addRowHandlers(); });    
 
-// handle account deletion //
-	$('.modal-confirm .submit').click(function(){ that.deleteAccount(); });
+	$('input.inputRad').click(function(){ that.addRowHandlers(); });
 
-	this.deleteAccount = function()
+}
+	this.addRowHandlers = function()
 	{
-		$('.modal-confirm').modal('hide');
-		var that = this;
-		$.ajax({
-			url: '/delete',
-			type: 'POST',
-			data: { id: $('#userId').val()},
-			success: function(data){
-	 			that.showLockedAlert('Your account has been deleted.<br>Redirecting you back to the homepage.');
-			},
-			error: function(jqXHR){
-				console.log(jqXHR.responseText+' :: '+jqXHR.statusText);
-			}
-		});
+		console.log("click received");
+		var table = document.getElementById("tblproviders");
+		var rows = table.getElementsByTagName("tr");
+		for (i = 0; i < rows.length; i++) {
+			var currentRow = table.rows[i];
+			var createClickHandler = 
+			function(row){
+				return function() { 
+				var cell = row.getElementsByTagName("td")[0];
+				var id = cell.innerHTML;
+				alert("id:" + id);
+				};
+			};
+
+			currentRow.onclick = createClickHandler(currentRow);
+		}
 	}
 
 	this.attemptLogout = function()

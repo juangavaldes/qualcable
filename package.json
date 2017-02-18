@@ -18,11 +18,11 @@
     "errorhandler": "1.4.2",
     "express": "4.13.3",
     "express-session": "1.11.3",
-    "jade": "1.11.0",
     "moment": "2.10.3",
     "mongodb": "2.0.45",
     "stylus": "0.52.4",
-    "nodemon": "~1.11.0"
+    "nodemon": "~1.11.0",
+    "pug": "~2.0.0-beta11"
   },
   "engines": {
     "node": "4.2.1"

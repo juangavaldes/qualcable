@@ -17,7 +17,8 @@ module.exports = function(app) {
 			AM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
 				if (o != null){
 				    req.session.user = o;
-					res.redirect('/home');
+
+					res.redirect('/search');
 				}	else{
 					res.render('login', { title: 'Hello - Please Login To Your Account' });
 				}
@@ -100,24 +101,13 @@ module.exports = function(app) {
 	app.post('/search', function(req, res){
 		if (req.session.user == null){
 			res.redirect('/');
-		}	else{
-			AM.updateAccount({
-				id		: req.session.user._id,
-				name	: req.body['name'],
-				email	: req.body['email'],
-				pass	: req.body['pass'],
-				country	: req.body['country']
-			}, function(e, o){
+		}	else{		
+			AM.getServicesByZip(parseInt(req.body['zip'], 10), function(e, o){
 				if (e){
-					res.status(400).send('error-updating-account');
-				}	else{
-					req.session.user = o;
-			// update the user's login cookies if they exists //
-					if (req.cookies.user != undefined && req.cookies.pass != undefined){
-						res.cookie('user', o.user, { maxAge: 900000 });
-						res.cookie('pass', o.pass, { maxAge: 900000 });	
-					}
-					res.status(200).send('ok');
+					res.status(400).send('zip-code-returne-no-results');
+				}	else{					
+					sdata = o;							
+					res.status(200).send('ok');					
 				}
 			});
 		}
@@ -227,7 +217,46 @@ module.exports = function(app) {
 			res.redirect('/print');	
 		});
 	});
-	
-	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
 
+	app.get('/result', function(req, res) {
+		if (req.session.user == null){
+	// if user is not logged-in redirect back to login page //
+			res.redirect('/');
+		}	else{
+			//console.log("SDATA");
+			//console.log(sdata);
+			res.render('result', {
+				title : 'Search Results',
+				sdata : sdata
+			});
+		}
+	});
+	
+	app.post('/result', function(req, res){
+		if (req.session.user == null){
+			res.redirect('/');
+		}	else{
+			AM.updateAccount({
+				id		: req.session.user._id,
+				name	: req.body['name'],
+				email	: req.body['email'],
+				pass	: req.body['pass'],
+				country	: req.body['country']
+			}, function(e, o){
+				if (e){
+					res.status(400).send('error-updating-account');
+				}	else{
+					req.session.user = o;
+			// update the user's login cookies if they exists //
+					if (req.cookies.user != undefined && req.cookies.pass != undefined){
+						res.cookie('user', o.user, { maxAge: 900000 });
+						res.cookie('pass', o.pass, { maxAge: 900000 });	
+					}
+					res.status(200).send('ok');
+				}
+			});
+		}
+	});
+
+	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
 };

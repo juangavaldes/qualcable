@@ -36,13 +36,12 @@ block content
 			.form-group
 				label Zip Code
 				input.form-control(type='text', id='zip-tf', name='zip')
-			hr		
 			.form-buttons
 				button(type='button')#search-form-btn1.btn.btn-default
 				button(type='submit')#search-form-btn2.btn.btn-primary
-			.clearfix			
-
+			.clearfix
 	include modals/form-errors
+	include modals/alert
 	include modals/confirm
 block scripts
 	script(src='/vendor/jquery-2.2.3.min.js')

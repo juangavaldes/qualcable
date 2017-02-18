@@ -33,6 +33,7 @@ db.open(function(e, d){
 });
 
 var accounts = db.collection('accounts');
+var services = db.collection('services');
 
 /* login validation methods */
 
@@ -210,5 +211,14 @@ var findByMultipleFields = function(a, callback)
 		function(e, results) {
 		if (e) callback(e)
 		else callback(null, results)
+	});
+}
+
+exports.getServicesByZip = function(zipcode, callback)
+{	
+	services.find({zip: zipcode}).toArray(
+		function(e, res) {
+		if (e) callback(e)
+		else callback(null, res)
 	});
 }
