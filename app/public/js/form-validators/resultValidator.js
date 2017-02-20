@@ -12,15 +12,14 @@ function ResultValidator()
 	}
 }
 
-LoginValidator.prototype.validateForm = function()
+ResultValidator.prototype.validateForm = function()
 {
-	if ($('#user-tf').val() == ''){
-		this.showLoginError('Whoops!', 'Please enter a valid username');
-		return false;
-	}	else if ($('#pass-tf').val() == ''){
-		this.showLoginError('Whoops!', 'Please enter a valid password');
-		return false;
-	}	else{
-		return true;
+	console.log('validate form');
+	var e = [];
+	for (var i=0; i < this.controlGroups.length; i++) this.controlGroups[i].removeClass('error');
+	if (this.validateZip(this.formFields[2].val()) == false) {
+		this.controlGroups[2].addClass('error'); e.push('Please Enter A Valid Zip Code');
 	}
+	if (e.length) this.showErrors(e);
+	return e.length === 0;
 }

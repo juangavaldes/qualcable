@@ -34,6 +34,7 @@ db.open(function(e, d){
 
 var accounts = db.collection('accounts');
 var services = db.collection('services');
+var prices = db.collection('prices');
 
 /* login validation methods */
 
@@ -217,6 +218,16 @@ var findByMultipleFields = function(a, callback)
 exports.getServicesByZip = function(zipcode, callback)
 {	
 	services.find({zip: zipcode}).toArray(
+		function(e, res) {
+		if (e) callback(e)
+		else callback(null, res)
+	});
+}
+
+exports.getPricesByProvider = function(prov, callback)
+{	
+	var pro = prov.provider;	
+	prices.find({"provider": pro}).toArray(
 		function(e, res) {
 		if (e) callback(e)
 		else callback(null, res)

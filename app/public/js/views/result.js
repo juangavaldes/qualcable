@@ -21,18 +21,11 @@ $(document).ready(function(){
 			    rv.showInvalidUserName();
 			}
 		}
-	});
-	$('#zip-tf').focus();
+	});	
 	
 // customize the account signup form //
 	
 	$('#result-form h2').text('Result');
-	$('#result-form #add1-tf').text('Address Line 1 information');
-	$('#result-form #add2-tf').text('Address Line 2 information');
-	$('#result-form #zip-tf').text('Enter ZIP Code');
-	$('#result-form-btn1').html('Cancel');
-	$('#result-form-btn2').html('Submit');
-	$('#result-form-btn2').addClass('btn-primary');
 	
 // setup the alert that displays when an account is successfully created //
 

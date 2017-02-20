@@ -223,8 +223,6 @@ module.exports = function(app) {
 	// if user is not logged-in redirect back to login page //
 			res.redirect('/');
 		}	else{
-			//console.log("SDATA");
-			//console.log(sdata);
 			res.render('result', {
 				title : 'Search Results',
 				sdata : sdata
@@ -256,6 +254,17 @@ module.exports = function(app) {
 				}
 			});
 		}
+	});
+
+	app.post('/refreshTable', function(req, res){
+		AM.getPricesByProvider({provider : req.body['message']}, function(e, o){
+			if (e){
+				res.status(400).send('provider-returned-no-results');
+			}	else{					
+				res.status(200).send(o);
+			}
+		});
+		
 	});
 
 	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
