@@ -3,6 +3,7 @@ var crypto 		= require('crypto');
 var MongoDB 	= require('mongodb').Db;
 var Server 		= require('mongodb').Server;
 var moment 		= require('moment');
+var merge 		= require('merge'), original, cloned;
 
 /*
 	ESTABLISH DATABASE CONNECTION
@@ -35,6 +36,7 @@ db.open(function(e, d){
 var accounts = db.collection('accounts');
 var services = db.collection('services');
 var prices = db.collection('prices');
+var orders = db.collection('orders');
 
 /* login validation methods */
 
@@ -224,12 +226,41 @@ exports.getServicesByZip = function(zipcode, callback)
 	});
 }
 
-exports.getPricesByProvider = function(prov, callback)
+exports.getServiceByID = function(id, callback)
 {	
-	var pro = prov.provider;	
-	prices.find({"provider": pro}).toArray(
+	services.find({'_id': getObjectId(id)}).toArray(
 		function(e, res) {
 		if (e) callback(e)
 		else callback(null, res)
 	});
+}
+
+exports.getPriceByID = function(id, callback)
+{	
+	prices.find({'_id': getObjectId(id)}).toArray(
+		function(e, res) {
+		if (e) callback(e)
+		else callback(null, res)
+	});
+}
+
+exports.getPricesByProviderZone = function(prov, zon, callback)
+{	
+	prices.find({"provider": prov, "zone": zon}).toArray(
+		function(e, res) {
+		if (e){ 
+			callback(e)
+			console.log(e);
+		}
+		else callback(null, res)
+	});
+}
+
+/* record insertion, update & deletion methods */
+
+exports.addNewOrder = function(orderInfo, addressInfo, userInfo, callback)
+{
+	var info = merge(orderInfo, addressInfo);
+	info.userID = userInfo._id;
+	orders.insert(info, {safe: true}, callback);	
 }

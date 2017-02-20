@@ -4,6 +4,7 @@ var ST = require('./modules/state-list');
 var CS = require('./modules/city-list');
 var AM = require('./modules/account-manager');
 var EM = require('./modules/email-dispatcher');
+var search;
 
 module.exports = function(app) {
 
@@ -99,6 +100,7 @@ module.exports = function(app) {
 	});
 	
 	app.post('/search', function(req, res){
+		search =req.body;
 		if (req.session.user == null){
 			res.redirect('/');
 		}	else{		
@@ -233,31 +235,19 @@ module.exports = function(app) {
 	app.post('/result', function(req, res){
 		if (req.session.user == null){
 			res.redirect('/');
-		}	else{
-			AM.updateAccount({
-				id		: req.session.user._id,
-				name	: req.body['name'],
-				email	: req.body['email'],
-				pass	: req.body['pass'],
-				country	: req.body['country']
-			}, function(e, o){
+		}	else{	
+			AM.addNewOrder(req.body, search, req.session.user, function(e, o){
 				if (e){
-					res.status(400).send('error-updating-account');
-				}	else{
-					req.session.user = o;
-			// update the user's login cookies if they exists //
-					if (req.cookies.user != undefined && req.cookies.pass != undefined){
-						res.cookie('user', o.user, { maxAge: 900000 });
-						res.cookie('pass', o.pass, { maxAge: 900000 });	
-					}
-					res.status(200).send('ok');
+					res.status(400).send('order was not added');
+				}	else{											
+					res.status(200).send('ok');					
 				}
 			});
 		}
 	});
 
 	app.post('/refreshTable', function(req, res){
-		AM.getPricesByProvider({provider : req.body['message']}, function(e, o){
+		AM.getPricesByProviderZone(req.body['message'], req.body['title'], function(e, o){
 			if (e){
 				res.status(400).send('provider-returned-no-results');
 			}	else{					

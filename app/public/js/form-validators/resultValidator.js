@@ -14,12 +14,6 @@ function ResultValidator()
 
 ResultValidator.prototype.validateForm = function()
 {
+	//Nothing to validate at the current time.
 	console.log('validate form');
-	var e = [];
-	for (var i=0; i < this.controlGroups.length; i++) this.controlGroups[i].removeClass('error');
-	if (this.validateZip(this.formFields[2].val()) == false) {
-		this.controlGroups[2].addClass('error'); e.push('Please Enter A Valid Zip Code');
-	}
-	if (e.length) this.showErrors(e);
-	return e.length === 0;
 }

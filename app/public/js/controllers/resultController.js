@@ -8,31 +8,48 @@ function ResultController()
 
 	$('.inputRad').on("change", function(){ that.addRowHandlers(); })
 
+	// confirm ORDER //
+	$('#result-form-btn1').click(function(){$('.modal-confirm').modal('show')});
+
+	// handle order submit 
+	$('.modal-confirm .submit').click(function(){  that.submitOrder(); });
+
+	this.submitOrder = function()
+	{
+		$('#result-form-btn2').click();
+	}
+
 	this.addRowHandlers = function()
 	{
+		document.getElementById('result-form-btn1').disabled = false;
 		var table = document.getElementById('tblproviders');
 		var rows = table.getElementsByTagName('tr');
 		var provider;
+		var zone;
 		for (i = 0; i < rows.length; i++) {
 			var currentRow = table.rows[i];
 			var createClickHandler = 
 			function(row){
 				return function() { 
-				var cell = row.getElementsByTagName('td')[0];
-				provider = cell.innerHTML;			
-				that.refreshTable(provider);
+					var prv = row.getElementsByTagName('td')[0];
+					var ze = row.getElementsByTagName('td')[2];
+					row.getElementsByClassName('inputRad')[0].checked = true;
+					provider = prv.innerHTML;
+					zone = ze.innerHTML;
+					that.refreshTable(provider,zone);
 				};
 			};
 			currentRow.onclick = createClickHandler(currentRow);
 		}
 	}
 
-	this.refreshTable = function(prov)
+	this.refreshTable = function(prov, zon)
 	{
 		$('#tblprices tbody').empty();
 		var pdata;
 		var data = {};
 		data.message = prov;
+		data.title = zon;
 		$.ajax({
 			url: "/refreshTable",
 			type: "POST",
@@ -41,8 +58,7 @@ function ResultController()
 			success: function(dat){		
 		    	for (i = 0; i < dat.length; i++) {
 		    		var temp = dat[i];		    		
-		    		console.log(temp['price']);
-		       		$('#tblprices tbody').append('<tr><td>'+temp['price']+'</td><td>'+temp['additional']+'</td><td><input type="radio", class="priceRad", name="priceRad", value="'+i+'"</td></tr>');
+		       		$('#tblprices tbody').append('<tr><td>'+temp['price']+'</td><td>'+temp['additional']+'</td><td><input type="radio" class="priceRad" name="priceRad" checked="" value="'+temp['_id']+'"></td></tr>');
 		    	}
 			},
 			error: function(jqXHR){
@@ -81,7 +97,7 @@ ResultController.prototype.onUpdateSuccess = function()
 {
 	$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
 	$('.modal-alert .modal-header h4').text('Success!');
-	$('.modal-alert .modal-body p').html('Your account has been updated.');
+	$('.modal-alert .modal-body p').html('Your service request has been submitted.');
 	$('.modal-alert').modal('show');
 	$('.modal-alert button').off('click');
 }

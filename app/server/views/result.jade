@@ -4,19 +4,24 @@ service=typeof(sdata) != 'undefined' ? sdata : { }
 input(type='hidden', value= user._id)#userId
 
 block content
-	nav.navbar.navbar-default.navbar-fixed-top
-		.container
-			.navbar-header
-				.navbar-brand Control Panel
-			ul.nav.navbar-nav.navbar-right
-				li
-					.navbar-btn#btn-logout.btn.btn-default
-						| Sign Out
-	#result.center-horizontal
-		form.well(id='result-form', method='post')
-			h2 Results
+	div.well
+		nav.navbar.navbar-default.navbar-fixed-top
+			.container
+				.navbar-header
+					.navbar-brand Control Panel
+				ul.nav.navbar-nav.navbar-right
+					li
+						.navbar-btn#btn-logout.btn.btn-default
+							| Sign Out
+	div
+		p
+	#result
+
+		h2 Results	
+		form(id='result-form', method='post')
+			
 			h6 Look at your results below
-			div.col-md-6
+			div.marglftrgt
 				div.table-responsive
 					table#tblproviders.table-bordered.table-striped.table
 						thead
@@ -24,7 +29,7 @@ block content
 								th Provider
 								th ZIP
 								th Zone
-								th Price
+								th Choose
 						tbody
 							- var i = 0
 							for service in sdata
@@ -33,17 +38,20 @@ block content
 									td= service.zip
 									td= service.zone
 									td
-										input(type='radio', class='inputRad', name='inputRad', value=i, checked='')
+										input(type='radio', class='inputRad', name='inputRad', value=service._id, checked='')
 									- i += 1
 			
 				div.table-responsive
 					table#tblprices.table-bordered.table-striped.table
 						thead
 							tr 
-								th Speed
-								th Price
+								th Speed/Price
+								th Additional Info
 								th Select
 						tbody
+			div.col-md-offset-3.col-md-6
+				button(type='button' disabled)#result-form-btn1.btn.btn-primary.center
+				button(type='submit' visible='false')#result-form-btn2
 	include modals/form-errors
 	include modals/alert
 	include modals/confirm

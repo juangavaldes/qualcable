@@ -11,7 +11,7 @@ $(document).ready(function(){
 		success	: function(responseText, status, xhr, $form){
 			if (status == 'success'){
 				rc.onUpdateSuccess();
-				window.location.href = '/result';
+				window.location.href = '/search';
 			}
 		},
 		error : function(e){
@@ -25,7 +25,9 @@ $(document).ready(function(){
 	
 // customize the account signup form //
 	
-	$('#result-form h2').text('Result');
+	$('#result-form h2').text('Results');
+	$('#result-form-btn1').html('Submit');
+	$('#result-form-btn2').html('Submit');
 	
 // setup the alert that displays when an account is successfully created //
 
@@ -33,4 +35,11 @@ $(document).ready(function(){
 	$('.modal-alert .modal-header h4').text('Display Results!');
 	$('.modal-alert .modal-body p').html('Your results has been performed.</br>Click OK to continue.');
 
+
+	$('.modal-confirm').modal({ show : false, keyboard : true, backdrop : true });
+	$('.modal-confirm .modal-header h4').text('Submit Order');
+	$('.modal-confirm .modal-body p').html('Are you sure you want to submit this order?');
+	$('.modal-confirm .cancel').html('Cancel');
+	$('.modal-confirm .submit').html('Send');
+	$('.modal-confirm .submit').addClass('btn-primary');
 });
