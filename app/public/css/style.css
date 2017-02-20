@@ -117,6 +117,10 @@ h6 {
 .center-vertical {
   height: 100vh;
 }
+
+.center-horizontal {
+  position: relative;
+}
 .center-vertical form {
   top: 50%;
   margin: auto;

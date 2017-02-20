@@ -4,7 +4,6 @@ service=typeof(sdata) != 'undefined' ? sdata : { }
 input(type='hidden', value= user._id)#userId
 
 block content
-
 	nav.navbar.navbar-default.navbar-fixed-top
 		.container
 			.navbar-header
@@ -13,12 +12,13 @@ block content
 				li
 					.navbar-btn#btn-logout.btn.btn-default
 						| Sign Out
-
-	#result.center-vertical
-		div.content
+	#result.center-horizontal
+		form.well(id='result-form', method='post')
+			h2 Results
+			h6 Look at your results below
 			div.col-md-6
 				div.table-responsive
-					table#tblproviders.table-striped.table
+					table#tblproviders.table-bordered.table-striped.table
 						thead
 							tr
 								th Provider
@@ -26,14 +26,18 @@ block content
 								th Zone
 								th Price
 						tbody
+							- var i = 0
 							for service in sdata
 								tr
 									td= service.provider
 									td= service.zip
 									td= service.zone
 									td
-										input(type='radio', class='inputRad', name='inputRad', value=0, checked='')
-					table#tblprices.table-striped.table
+										input(type='radio', class='inputRad', name='inputRad', value=i, checked='')
+									- i += 1
+			
+				div.table-responsive
+					table#tblprices.table-bordered.table-striped.table
 						thead
 							tr 
 								th Speed
@@ -47,6 +51,6 @@ block scripts
 	script(src='/vendor/jquery-2.2.3.min.js')
 	script(src='/vendor/jquery.form.min.js')
 	script(src='/vendor/bootstrap.min.js')
-	script(src='/js/views/search.js')
-	script(src='/js/controllers/searchController.js')
-	script(src='/js/form-validators/searchValidator.js')
+	script(src='/js/views/result.js')
+	script(src='/js/controllers/resultController.js')
+	script(src='/js/form-validators/resultValidator.js')
