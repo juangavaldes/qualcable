@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
 
-	var hc = new HomeController();
-	var av = new AccountValidator();
+	var hc = new AdminController();
+	var av = new AdminValidator();
 	
 	$('#account-form').ajaxForm({
 		beforeSubmit : function(formData, jqForm, options){
