@@ -32,6 +32,10 @@ h6 {
   font-weight: normal;
   text-shadow: -1px 1px 0 #fff;
 }
+.marglftrgt {
+  margin-left: 10px;
+  margin-right: 8px;
+}
 .well {
   background: #f8f8f8;
   margin-bottom: 0;
@@ -57,6 +61,9 @@ h6 {
 /*
 	login window
 */
+#result-form-btn2 {
+  visibility: hidden;
+}
 #login label {
   margin-left: 2px;
 }
@@ -116,10 +123,6 @@ h6 {
 }
 .center-vertical {
   height: 100vh;
-}
-
-.center-horizontal {
-  position: relative;
 }
 .center-vertical form {
   top: 50%;

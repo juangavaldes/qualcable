@@ -14,12 +14,7 @@ $(document).ready(function(){
 				window.location.href = '/result';
 			}
 		},
-		error : function(e){
-			if (e.responseText == 'email-taken'){
-			    av.showInvalidEmail();
-			}	else if (e.responseText == 'username-taken'){
-			    av.showInvalidUserName();
-			}
+		error : function(e){			
 		}
 	});
 	$('#zip-tf').focus();
@@ -29,6 +24,7 @@ $(document).ready(function(){
 	$('#search-form h2').text('Search');
 	$('#search-form #add1-tf').text('Address Line 1 information');
 	$('#search-form #add2-tf').text('Address Line 2 information');
+	$('#search-form #city-tf').text('Enter City');
 	$('#search-form #zip-tf').text('Enter ZIP Code');
 	$('#search-form-btn1').html('Cancel');
 	$('#search-form-btn2').html('Submit');

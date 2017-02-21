@@ -4,6 +4,7 @@ var ST = require('./modules/state-list');
 var CS = require('./modules/city-list');
 var AM = require('./modules/account-manager');
 var EM = require('./modules/email-dispatcher');
+var search;
 
 module.exports = function(app) {
 
@@ -99,6 +100,7 @@ module.exports = function(app) {
 	});
 	
 	app.post('/search', function(req, res){
+		search =req.body;
 		if (req.session.user == null){
 			res.redirect('/');
 		}	else{		
@@ -233,6 +235,57 @@ module.exports = function(app) {
 	app.post('/result', function(req, res){
 		if (req.session.user == null){
 			res.redirect('/');
+		}	else{	
+			AM.addNewOrder(req.body, search, req.session.user, function(e, o){
+				if (e){
+					res.status(400).send('order was not added');
+				}	else{											
+					res.status(200).send('ok');					
+				}
+			});
+			EM.dispatchResetPasswordLink(o, function(e, m){
+			// this callback takes a moment to return //
+			// TODO add an ajax loader to give user feedback //
+				if (!e){
+					res.status(200).send('ok');
+				}	else{
+					for (k in e) console.log('ERROR : ', k, e[k]);
+					res.status(400).send('unable to dispatch password reset');
+				}
+			});
+		}
+	});
+
+	app.post('/refreshTable', function(req, res){
+		AM.getPricesByProviderZone(req.body['message'], req.body['title'], function(e, o){
+			if (e){
+				res.status(400).send('provider-returned-no-results');
+			}	else{					
+				res.status(200).send(o);
+			}
+		});
+		
+	});
+
+	// admin homepage //
+	
+	app.get('/admin', function(req, res) {
+		if (req.session.user == null || req.session.admin== false){
+			console.log(req.session);
+	// if user is not logged-in redirect back to login page //
+			res.redirect('/');
+		}	else{
+			res.render('admin', {
+				title : 'Control Panel',
+				countries : CT,
+				udata : req.session.user
+			});
+		}
+	});
+	
+	app.post('/admin', function(req, res){
+		if (req.session.user == null){
+			res.redirect('/');
 		}	else{
 			AM.updateAccount({
 				id		: req.session.user._id,
@@ -254,17 +307,6 @@ module.exports = function(app) {
 				}
 			});
 		}
-	});
-
-	app.post('/refreshTable', function(req, res){
-		AM.getPricesByProvider({provider : req.body['message']}, function(e, o){
-			if (e){
-				res.status(400).send('provider-returned-no-results');
-			}	else{					
-				res.status(200).send(o);
-			}
-		});
-		
 	});
 
 	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });

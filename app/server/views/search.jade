@@ -28,11 +28,8 @@ block content
 					each state in states
 						option()=state.name
 			.form-group
-				label.control-label.col-sm-3 City
-				.col-sm-9
-				select.form-control#city-list(name='city')
-					each city in cities
-						option()=city.name
+				label City
+				input.form-control(type='text', id='city-tf', name='city')
 			.form-group
 				label Zip Code
 				input.form-control(type='text', id='zip-tf', name='zip')

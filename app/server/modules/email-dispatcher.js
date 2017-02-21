@@ -33,3 +33,25 @@ EM.composeEmail = function(o)
 		html += "</body></html>";
 	return  [{data:html, alternative:true}];
 }
+
+EM.dispatchNewOrderInfo = function(info, callback)
+{
+	EM.server.send({
+		from         : process.env.EMAIL_FROM || 'Node Login <do-not-reply@gmail.com>',
+		to           : 'admin@madadmin.com',
+		subject      : 'New Order Request',
+		text         : 'something went wrong... :(',
+		attachment   : EM.composeOrderEmail(account)
+	}, callback );
+}
+
+EM.composeOrderEmail = function(o)
+{
+	var html = "<html><body>";
+		html += "Hi "+o.name+",<br><br>";
+		html += "A new Order has been received for<b>"+o.user+"</b><br><br>";
+		html += "<a href='"+link+"'>Click here to review the order</a><br><br>";
+		html += "Cheers,<br>";
+		html += "</body></html>";
+	return  [{data:html, alternative:true}];
+}
