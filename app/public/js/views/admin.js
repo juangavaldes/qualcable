@@ -21,11 +21,11 @@ $(document).ready(function(){
 	
 // customize the account signup form //
 	
-	$('#admin-form h2').text('Admin Panel');
-	$('#admin-form #add1-tf').text('Address Line 1 information');
-	$('#admin-form #add2-tf').text('Address Line 2 information');
-	$('#admin-form #city-tf').text('Enter City');
-	$('#admin-form #zip-tf').text('Enter ZIP Code');
+	$('#admin-form h2').text('Administrator View');
+	$('#admin-opt-btn1').text('View Orders');
+	$('#admin-opt-btn2').text('Manage Users');
+	$('#admin-opt-btn3').text('Delete Orders');
+	$('#admin-opt-btn4').text('TBD');
 	$('#admin-form-form-btn1').html('Cancel');
 	$('#admin-form-btn2').html('Submit');
 	$('#admin-form-btn2').addClass('btn-primary');

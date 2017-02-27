@@ -6,7 +6,7 @@ function ResultController()
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
 
-	$('.inputRad').on("change", function(){ that.addRowHandlers(); })
+	$('.serviceRad').on("change", function(){ that.addRowHandlers(); })
 
 	// confirm ORDER //
 	$('#result-form-btn1').click(function(){$('.modal-confirm').modal('show')});
@@ -33,7 +33,7 @@ function ResultController()
 				return function() { 
 					var prv = row.getElementsByTagName('td')[0];
 					var ze = row.getElementsByTagName('td')[2];
-					row.getElementsByClassName('inputRad')[0].checked = true;
+					row.getElementsByClassName('serviceRad')[0].checked = true;
 					provider = prv.innerHTML;
 					zone = ze.innerHTML;
 					that.refreshTable(provider,zone);

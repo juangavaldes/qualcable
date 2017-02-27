@@ -276,8 +276,7 @@ module.exports = function(app) {
 			res.redirect('/');
 		}	else{
 			res.render('admin', {
-				title : 'Control Panel',
-				countries : CT,
+				title : 'Administrator View',
 				udata : req.session.user
 			});
 		}
@@ -305,6 +304,50 @@ module.exports = function(app) {
 					}
 					res.status(200).send('ok');
 				}
+			});
+		}
+	});
+
+	// admin homepage //
+	
+	app.get('/orders', function(req, res) {
+		var odata;
+		if (req.session.user == null || req.session.admin== false){
+			console.log(req.session);
+	// if user is not logged-in redirect back to login page //
+			res.redirect('/');
+		}	else{
+			AM.getAllOrders(function(e, o){
+				if (e){
+					res.status(400).send('orders-returne-no-results');
+				}	else{					
+					odata = o;	
+					res.render('orders', {
+						title : 'View Orders',
+						odata : odata,
+						udata : req.session.user
+					});							
+				}
+			});
+			
+		}
+	});
+
+	app.get('/print', function(req, res) {
+		AM.getAllRecords( function(e, accounts){
+			res.render('print', { title : 'Account List', accts : accounts });
+		})
+	});
+
+	app.get('/users', function(req, res) {
+		if (req.session.user == null || req.session.admin== false){
+			console.log(req.session);
+	// if user is not logged-in redirect back to login page //
+			res.redirect('/');
+		}	else{
+			res.render('users', {
+				title : 'Manage Users',
+				udata : req.session.user
 			});
 		}
 	});
