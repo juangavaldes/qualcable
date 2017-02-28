@@ -303,3 +303,8 @@ exports.getOrdersByStatus = function(status, callback)
 		else callback(null, res)
 	});
 }
+
+exports.updateOrders = function(orderID, orderstatus, callback)
+{
+	orders.update({'_id': getObjectId(orderID)}, { $set: {'status': orderstatus}}, callback);	
+}

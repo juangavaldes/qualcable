@@ -22,6 +22,7 @@ $(document).ready(function(){
 // customize the account signup form //
 	
 	$('#search-form h2').text('Search');
+	$('#search-form #customerName-tf').text('Customer Name');
 	$('#search-form #add1-tf').text('Address Line 1 information');
 	$('#search-form #add2-tf').text('Address Line 2 information');
 	$('#search-form #city-tf').text('Enter City');

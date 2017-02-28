@@ -3,8 +3,8 @@ function SearchValidator()
 {
 // build array maps of the form inputs & control groups //
 
-	this.formFields = [$('#add1-tf'), $('#add2-tf'), $('#zip-tf')];
-	this.controlGroups = [$('#add1-cg'), $('#add2-cg'), $('#zip-cg')];
+	this.formFields = [$('#customerName-tf'), $('#add1-tf'), $('#add2-tf'), $('#zip-tf')];
+	this.controlGroups = [$('#customerName-cg'), $('#add1-cg'), $('#add2-cg'), $('#zip-cg')];
 	
 // bind the form-error modal window to this controller to display any errors //
 	
@@ -38,8 +38,8 @@ SearchValidator.prototype.validateForm = function()
 {
 	var e = [];
 	for (var i=0; i < this.controlGroups.length; i++) this.controlGroups[i].removeClass('error');
-	if (this.validateZip(this.formFields[2].val()) == false) {
-		this.controlGroups[2].addClass('error'); e.push('Please Enter A Valid Zip Code');
+	if (this.validateZip(this.formFields[3].val()) == false) {
+		this.controlGroups[3].addClass('error'); e.push('Please Enter A Valid Zip Code');
 	}
 	if (e.length) this.showErrors(e);
 	return e.length === 0;

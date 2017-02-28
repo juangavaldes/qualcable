@@ -1,5 +1,6 @@
 extends layout
 orders=typeof(odata) != 'undefined' ? odata : { }
+ostatus=typeof(ostat) != 'undefined' ? ostat : { }
 // store the userId on the client side in a hidden input field //
 input(type='hidden', value= user._id)#userId
 
@@ -27,7 +28,8 @@ block content
 						thead
 							tr
 								th Date
-								th UserName
+								th User Name
+								th Customer Name
 								th Zip
 								th Status
 								th Select
@@ -37,8 +39,12 @@ block content
 								tr
 									td= orders.date
 									td= orders.userID
+									td= orders.customerName
 									td= orders.zip
-									td= orders.status
+									td 
+										select.orderselect
+											for item in ostat							
+												option(selected=orders.status == item) #{item}
 									td
 										input(type='radio', class='ordersRad', name='orderRad', value=orders._id, checked='')
 									- i += 1
@@ -49,19 +55,14 @@ block content
 							tr 
 								th OrderId
 								th ServiceId
-								th PriceId
 								th Address Line 1
 								th Address Line 2
 								th State
 								th City
 								th Zip
-								th Username
-								th Date
-								th Current Status
 						tbody
 			div.col-md-offset-3.col-md-6
 				button(type='button' disabled)#orders-form-btn1.btn.btn-primary.center
-				button(type='submit' visible='false')#orders-form-btn2
 	include modals/form-errors
 	include modals/alert
 	include modals/confirm

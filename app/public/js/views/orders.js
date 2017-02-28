@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
 	
-	var rv = new OrdersValidator();
-	var rc = new OrdersController();
+	var ov = new OrdersValidator();
+	var oc = new OrdersController();
 	
 	$('#orders-form').ajaxForm({
 		beforeSubmit : function(formData, jqForm, options){
@@ -10,15 +10,15 @@ $(document).ready(function(){
 		},
 		success	: function(responseText, status, xhr, $form){
 			if (status == 'success'){
-				rc.onUpdateSuccess();
+				oc.onUpdateSuccess();
 				window.location.href = '/search';
 			}
 		},
 		error : function(e){
 			if (e.responseText == 'email-taken'){
-			    rv.showInvalidEmail();
+			    ov.showInvalidEmail();
 			}	else if (e.responseText == 'username-taken'){
-			    rv.showInvalidUserName();
+			    ov.showInvalidUserName();
 			}
 		}
 	});	

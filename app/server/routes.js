@@ -316,6 +316,7 @@ module.exports = function(app) {
 	// admin homepage //
 	
 	app.get('/orders', function(req, res) {
+		var ostat= ["new","in-progress","completed","cancelled"];
 		var odata;
 		if (req.session.user == null || req.session.admin== false){
 			console.log(req.session);
@@ -330,11 +331,25 @@ module.exports = function(app) {
 					res.render('orders', {
 						title : 'View Orders',
 						odata : odata,
+						ostat : ostat,
 						udata : req.session.user
 					});							
 				}
 			});
 			
+		}
+	});
+
+	app.post('/orders', function(req, res){
+		if (req.session.user == null || req.session.admin== false){
+			res.redirect('/');
+		}	else{
+			for(i = 0; i < req.body['_ids'].length; i++){	
+				var ids = req.body['_ids'];
+				var status = req.body['status'];
+				AM.updateOrders(ids[i], status[i]);
+			}
+			res.status(200).send('ok');
 		}
 	});
 
