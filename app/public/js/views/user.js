@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
 	
-	var av = new AdminValidator();
-	var sc = new AdminController();
+	var av = new UserValidator();
+	var sc = new UserController();
 	
-	$('#admin-form').ajaxForm({
+	$('#user-form').ajaxForm({
 		beforeSubmit : function(formData, jqForm, options){
 			return av.validateForm();
 		},
@@ -21,14 +21,14 @@ $(document).ready(function(){
 	
 // customize the account signup form //
 	
-	$('#admin-form h2').text('Administrator View');
-	$('#admin-opt-btn1').text('View Orders');
-	$('#admin-opt-btn2').text('Manage Users');
-	$('#admin-opt-btn3').text('Delete Orders');
-	$('#admin-opt-btn4').text('TBD');
-	$('#admin-form-form-btn1').html('Cancel');
-	$('#admin-form-btn2').html('Submit');
-	$('#admin-form-btn2').addClass('btn-primary');
+	$('#user-form h2').text('Administrator View');
+	$('#user-opt-btn1').text('View Orders');
+	$('#user-opt-btn2').text('Manage Users');
+	$('#user-opt-btn3').text('Delete Orders');
+	$('#user-opt-btn4').text('TBD');
+	$('#user-form-form-btn1').html('Cancel');
+	$('#user-form-btn2').html('Submit');
+	$('#user-form-btn2').addClass('btn-primary');
 	
 // setup the alert that displays when an account is successfully created //
 

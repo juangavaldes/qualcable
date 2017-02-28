@@ -1,5 +1,5 @@
 
-function AdminValidator()
+function UserValidator()
 {
 // build array maps of the form inputs & control groups //
 
@@ -28,7 +28,7 @@ function AdminValidator()
 
 }
 
-AdminValidator.prototype.showInvalidZip = function()
+UserValidator.prototype.showInvalidZip = function()
 {
 	this.controlGroups[2].addClass('error');
 	this.showErrors(['That zip code is invalid.']);

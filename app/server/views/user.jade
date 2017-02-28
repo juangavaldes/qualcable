@@ -13,7 +13,7 @@ block content
 	div
 		p
 	#login.center-vertical
-		h2 Admin Options
+		h2 User Management
 	
 		h6 Select one Option
 		div.marglftrgt
@@ -21,14 +21,14 @@ block content
 				table.table
 					tr
 						td
-							button(type='button')#admin-opt-btn1.btn.btn-primary
+							button(type='button')#user-opt-btn1.btn.btn-primary
 						td
-							button(type='button')#admin-opt-btn2.btn.btn-primary
+							button(type='button')#user-opt-btn2.btn.btn-primary
 					tr
 						td
-							button(type='button')#admin-opt-btn3.btn.btn-primary
+							button(type='button')#user-opt-btn3.btn.btn-primary
 						td
-							button(type='button')#admin-opt-btn4.btn.btn-primary
+							button(type='button')#user-opt-btn4.btn.btn-primary
 
 	include modals/form-errors
 	include modals/alert
@@ -37,6 +37,6 @@ block scripts
 	script(src='/vendor/jquery-2.2.3.min.js')
 	script(src='/vendor/jquery.form.min.js')
 	script(src='/vendor/bootstrap.min.js')
-	script(src='/js/views/admin.js')
-	script(src='/js/controllers/adminController.js')
-	script(src='/js/form-validators/adminValidator.js')
+	script(src='/js/views/user.js')
+	script(src='/js/controllers/userController.js')
+	script(src='/js/form-validators/userValidator.js')

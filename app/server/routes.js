@@ -89,13 +89,18 @@ module.exports = function(app) {
 		if (req.session.user == null){
 	// if user is not logged-in redirect back to login page //
 			res.redirect('/');
-		}	else{
-			res.render('search', {
-				title : 'Search Service',
-				states : ST,
-				cities : CS,
-				udata : req.session.user
-			});
+		}else{
+			if(req.session.admin == true){
+				res.redirect('/orders');
+			}
+			else{
+				res.render('search', {
+					title : 'Search Service',
+					states : ST,
+					cities : CS,
+					udata : req.session.user
+				});
+			}
 		}
 	});
 	
@@ -243,7 +248,7 @@ module.exports = function(app) {
 					res.status(200).send('ok');					
 				}
 			});
-			EM.dispatchResetPasswordLink(o, function(e, m){
+			/*EM.dispatchResetPasswordLink(o, function(e, m){
 			// this callback takes a moment to return //
 			// TODO add an ajax loader to give user feedback //
 				if (!e){
@@ -252,7 +257,7 @@ module.exports = function(app) {
 					for (k in e) console.log('ERROR : ', k, e[k]);
 					res.status(400).send('unable to dispatch password reset');
 				}
-			});
+			});*/
 		}
 	});
 
@@ -350,6 +355,17 @@ module.exports = function(app) {
 				udata : req.session.user
 			});
 		}
+	});
+
+	app.post('/refreshOrderTable', function(req, res){
+		AM.getOrdersByOrderID(req.body['_id'], function(e, o){
+			if (e){
+				res.status(400).send('provider-returned-no-results');
+			}	else{					
+				res.status(200).send(o);
+			}
+		});
+		
 	});
 
 	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });

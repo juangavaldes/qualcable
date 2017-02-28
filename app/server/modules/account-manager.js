@@ -247,7 +247,7 @@ exports.getPriceByID = function(id, callback)
 
 exports.getPricesByProviderZone = function(prov, zon, callback)
 {	
-	prices.find({"provider": prov, "zone": zon}).toArray(
+	prices.find({'provider': prov, 'zone': zon}).toArray(
 		function(e, res) {
 		if (e){ 
 			callback(e)
@@ -264,7 +264,7 @@ exports.addNewOrder = function(orderInfo, addressInfo, userInfo, callback)
 	info.date = moment().format('MMMM Do YYYY, h:mm:ss a');
 	console.log()
 	info.userID = userInfo._id;
-	info.status = "new";
+	info.status = 'new';
 	orders.insert(info, {safe: true}, callback);	
 }
 
@@ -280,9 +280,9 @@ exports.getAllOrders = function(callback)
 	});
 }
 
-exports.getOrdersByUserID = function(userID, callback)
+exports.getOrdersByOrderID = function(orderID, callback)
 {	
-	orders.find({"_id": userID}).toArray(
+	orders.find({'_id': getObjectId(orderID)}).toArray(
 		function(e, res) {
 		if (e){ 
 			callback(e)

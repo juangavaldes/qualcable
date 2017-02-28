@@ -23,7 +23,7 @@ block content
 			h6 Look at your results below
 			div.marglftrgt
 				div.table-responsive
-					table#tblproviders.table-bordered.table-striped.table
+					table#tblorders.table-bordered.table-striped.table
 						thead
 							tr
 								th Date
@@ -40,11 +40,11 @@ block content
 									td= orders.zip
 									td= orders.status
 									td
-										input(type='radio', class='orderRad', name='orderRad', value=orders._id, checked='')
+										input(type='radio', class='ordersRad', name='orderRad', value=orders._id, checked='')
 									- i += 1
 			
 				div.table-responsive
-					table#tblprices.table-bordered.table-striped.table
+					table#tblordersdtl.table-bordered.table-striped.table
 						thead
 							tr 
 								th OrderId
