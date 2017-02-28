@@ -6,7 +6,7 @@ function OrdersController()
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
 
-	$('.ordersRad').on("change", function(){ that.addRowHandlers(); })
+	$('.ordersRad').on('change', function(){ that.addRowHandlers(); })
 
 	// confirm ORDER //
 	$('#orders-form-btn1').click(function(){$('.modal-confirm').modal('show')});
@@ -16,7 +16,22 @@ function OrdersController()
 
 	this.submitOrder = function()
 	{
-		$('#orders-form-btn2').click();
+		var data = {};		
+		data.status = $('.orderselect').map(function() {return $(this).val();}).get();
+		data._ids = $('.ordersRad').map(function() {return $(this).val();}).get();
+
+		$.ajax({
+			url: '/orders',
+			type: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify(data),
+			success: function(){		
+		    	that.showUpdateAlert();
+			},
+			error: function(jqXHR){
+				console.log(jqXHR.responseText+' :: '+jqXHR.statusText);
+			}
+		});		
 	}
 
 	this.addRowHandlers = function()
@@ -52,7 +67,7 @@ function OrdersController()
 			success: function(dat){		
 		    	for (i = 0; i < dat.length; i++) {
 		    		var temp = dat[i];		    		
-		       		$('#tblordersdtl tbody').append('<tr><td>'+temp['_id']+'</td><td>'+temp['serviceRad']+'</td><td>'+temp['priceRad']+'</td><td>'+temp['add1']+'</td><td>'+temp['add2']+'</td><td>'+temp['state']+'</td><td>'+temp['city']+'</td><td>'+temp['zip']+'</td><td>'+temp['userID']+'</td><td>'+temp['date']+'</td><td>'+temp['status']+'</td><td>'+'</td></tr>');
+		       		$('#tblordersdtl tbody').append('<tr><td>'+temp['_id']+'</td><td>'+temp['serviceRad']+'</td><td>'+temp['add1']+'</td><td>'+temp['add2']+'</td><td>'+temp['state']+'</td><td>'+temp['city']+'</td><td>'+temp['zip']+'</td></tr>');
 		    	}
 			},
 			error: function(jqXHR){
@@ -84,13 +99,20 @@ function OrdersController()
 		$('.modal-alert button').click(function(){window.location.href = '/';})
 		setTimeout(function(){window.location.href = '/';}, 3000);
 	}
+	this.showUpdateAlert = function(msg){
+		$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
+		$('.modal-alert .modal-header h4').text('Success!');
+		$('.modal-alert .modal-body p').html('Your order has been updated.');
+		$('.modal-alert').modal('show');
+		$('.modal-alert button').off('click');
+	}
 }
 
 OrdersController.prototype.onUpdateSuccess = function()
 {
 	$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
 	$('.modal-alert .modal-header h4').text('Success!');
-	$('.modal-alert .modal-body p').html('Your service request has been submitted.');
+	$('.modal-alert .modal-body p').html('Your order has been updated.');
 	$('.modal-alert').modal('show');
 	$('.modal-alert button').off('click');
 }
