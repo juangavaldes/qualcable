@@ -1,0 +1,74 @@
+extends layout
+orders=typeof(odata) != 'undefined' ? odata : { }
+// store the userId on the client side in a hidden input field //
+input(type='hidden', value= user._id)#userId
+
+block content
+	div.well
+		nav.navbar.navbar-default.navbar-fixed-top
+			.container
+				.navbar-header
+					.navbar-brand View Orders
+				ul.nav.navbar-nav.navbar-right
+					li
+						.navbar-btn#btn-logout.btn.btn-default
+							| Sign Out
+	div
+		p
+	#orders
+		h2 View Orders!
+			h6 Filter Down and find orders
+		form(id='orders-form', method='post')
+			
+			h6 Look at your results below
+			div.marglftrgt
+				div.table-responsive
+					table#tblorders.table-bordered.table-striped.table
+						thead
+							tr
+								th Date
+								th UserName
+								th Zip
+								th Status
+								th Select
+						tbody
+							- var i = 0
+							for orders in odata
+								tr
+									td= orders.date
+									td= orders.userID
+									td= orders.zip
+									td= orders.status
+									td
+										input(type='radio', class='ordersRad', name='orderRad', value=orders._id, checked='')
+									- i += 1
+			
+				div.table-responsive
+					table#tblordersdtl.table-bordered.table-striped.table
+						thead
+							tr 
+								th OrderId
+								th ServiceId
+								th PriceId
+								th Address Line 1
+								th Address Line 2
+								th State
+								th City
+								th Zip
+								th Username
+								th Date
+								th Current Status
+						tbody
+			div.col-md-offset-3.col-md-6
+				button(type='button' disabled)#orders-form-btn1.btn.btn-primary.center
+				button(type='submit' visible='false')#orders-form-btn2
+	include modals/form-errors
+	include modals/alert
+	include modals/confirm
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/orders.js')
+	script(src='/js/controllers/ordersController.js')
+	script(src='/js/form-validators/ordersValidator.js')

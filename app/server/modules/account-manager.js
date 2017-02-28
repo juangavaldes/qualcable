@@ -247,7 +247,7 @@ exports.getPriceByID = function(id, callback)
 
 exports.getPricesByProviderZone = function(prov, zon, callback)
 {	
-	prices.find({"provider": prov, "zone": zon}).toArray(
+	prices.find({'provider': prov, 'zone': zon}).toArray(
 		function(e, res) {
 		if (e){ 
 			callback(e)
@@ -257,11 +257,49 @@ exports.getPricesByProviderZone = function(prov, zon, callback)
 	});
 }
 
-/* record insertion, update & deletion methods */
-
 exports.addNewOrder = function(orderInfo, addressInfo, userInfo, callback)
 {
 	var info = merge(orderInfo, addressInfo);
 	info.userID = userInfo._id;
+	info.date = moment().format('MMMM Do YYYY, h:mm:ss a');
+	console.log()
+	info.userID = userInfo._id;
+	info.status = 'new';
 	orders.insert(info, {safe: true}, callback);	
+}
+
+exports.getAllOrders = function(callback)
+{	
+	orders.find().toArray(
+		function(e, res) {
+		if (e){ 
+			callback(e)
+			console.log(e);
+		}
+		else callback(null, res)
+	});
+}
+
+exports.getOrdersByOrderID = function(orderID, callback)
+{	
+	orders.find({'_id': getObjectId(orderID)}).toArray(
+		function(e, res) {
+		if (e){ 
+			callback(e)
+			console.log(e);
+		}
+		else callback(null, res)
+	});
+}
+
+exports.getOrdersByStatus = function(status, callback)
+{	
+	orders.find({"status": status}).toArray(
+		function(e, res) {
+		if (e){ 
+			callback(e)
+			console.log(e);
+		}
+		else callback(null, res)
+	});
 }
