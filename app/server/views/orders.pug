@@ -1,8 +1,8 @@
 extends layout
-orders=typeof(odata) != 'undefined' ? odata : { }
-ostatus=typeof(ostat) != 'undefined' ? ostat : { }
-// store the userId on the client side in a hidden input field //
-input(type='hidden', value= user._id)#userId
+block content
+	orders=typeof(odata) != 'undefined' ? odata : { }
+	ostatus=typeof(ostat) != 'undefined' ? ostat : { }
+	input(type='hidden', value= user._id)#userId
 
 block content
 	div.well

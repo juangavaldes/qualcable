@@ -1,8 +1,7 @@
 extends layout
-service=typeof(sdata) != 'undefined' ? sdata : { }
-// store the userId on the client side in a hidden input field //
-input(type='hidden', value= user._id)#userId
-
+block content
+	input(type='hidden', value= user._id)#userId
+	service=typeof(sdata) != 'undefined' ? sdata : { }
 block content
 	div.well
 		nav.navbar.navbar-default.navbar-fixed-top
