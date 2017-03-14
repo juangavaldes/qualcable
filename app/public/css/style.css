@@ -14,6 +14,13 @@ h2 {
   margin: 0 0 6px 0;
   font-weight: bold;
 }
+h4 {
+  color: #fff;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  background-color: #000;
+}
 h6 {
   margin: 2px 0 20px 0;
 }
@@ -31,6 +38,30 @@ h6 {
   font-size: 13px;
   font-weight: normal;
   text-shadow: -1px 1px 0 #fff;
+}
+body {
+  background-image: url("/images/background.jpg");
+}
+.logo {
+  width: 200px;
+  height: 75px;
+  background: #fff;
+}
+.first {
+  margin-left: 25px;
+  width: 40%;
+  float: left;
+  height: auto;
+}
+.second {
+  margin-right: 25px;
+  width: 60%;
+  float: right;
+  height: auto;
+}
+.container {
+  width: auto;
+  margin: auto;
 }
 .marglftrgt {
   margin-left: 10px;
@@ -123,6 +154,23 @@ h6 {
 }
 .modal .modal-footer button {
   width: 80px;
+}
+.logintle {
+  margin: auto;
+  width: 20%;
+  padding: 10px;
+}
+.logintext {
+  color: #fff;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  background-color: #000;
+}
+.loginForm {
+  margin: auto;
+  width: 30%;
+  padding: 10px;
 }
 .center-vertical {
   height: 100vh;
