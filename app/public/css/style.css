@@ -9,17 +9,26 @@ body {
   background: -o-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%) /* Opera 12+ */;
   background: -ms-radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%) /* IE10+ */;
   background: radial-gradient(center, ellipse cover, #f2f9fe 0%, #d6f0fd 100%) /* W3C */;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 h2 {
   margin: 0 0 6px 0;
   font-weight: bold;
 }
+h3{
+  color: #fff;
+}
 h4 {
   color: #fff;
-  margin: auto;
+  margin: 1%;
   width: 70%;
   padding: 10px;
-  background-color: #000;
+  background-color: #2a2a2a;
+  font-weight: bold;
 }
 h6 {
   margin: 2px 0 20px 0;
@@ -39,23 +48,20 @@ h6 {
   font-weight: normal;
   text-shadow: -1px 1px 0 #fff;
 }
-body {
-  background-image: url("/images/background.jpg");
-}
 .logo {
   width: 200px;
   height: 75px;
-  background: #fff;
+  background: #2a2a2a;
 }
 .first {
   margin-left: 25px;
-  width: 40%;
+  width: 50%;
   float: left;
   height: auto;
 }
 .second {
   margin-right: 25px;
-  width: 60%;
+  width: 65%;
   float: right;
   height: auto;
 }
@@ -103,6 +109,7 @@ body {
 }
 #login form {
   width: 320px;
+  background-color: #2a2a2a;
 }
 #login .controls {
   margin-top: 20px;
@@ -159,13 +166,22 @@ body {
   margin: auto;
   width: 20%;
   padding: 10px;
+  font-weight: bold;
+  font-size: 60px;
+  color: black;
 }
 .logintext {
-  color: #fff;
-  margin: auto;
-  width: 70%;
+  color: #fff;  
+  width: 100%;
   padding: 10px;
-  background-color: #000;
+  background-color: #2a2a2a;
+}
+.logintext2 {
+  color: #fff;
+  margin: 50px;
+  width: 55%;
+  padding: 10px;
+  background-color: #2a2a2a;
 }
 .loginForm {
   margin: auto;
