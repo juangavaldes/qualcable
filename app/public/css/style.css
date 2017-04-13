@@ -221,12 +221,12 @@ h6 {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-#tblproviders{
-  background-color: gray;
+#tblproviders {
+  background-color: #808080;
 }
-#tblprices{
-  background-color: gray;
+#tblprices {
+  background-color: #808080;
 }
-.searchpage{
+.searchpage {
   color: #fff;
 }
