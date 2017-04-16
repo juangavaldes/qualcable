@@ -20,7 +20,13 @@ function SearchValidator()
 	this.validateNotEmpty = function(e)
 	{
 		var re = /^$|\s+/;
-		return re.test(e);
+		var res = re.test(e);
+		if(res){
+			var str=e;
+			str = str.trim();
+			return str=='';
+		}
+		return res;
 	}
 	
 	this.showErrors = function(a)
