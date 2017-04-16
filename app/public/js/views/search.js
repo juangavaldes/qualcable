@@ -25,6 +25,7 @@ $(document).ready(function(){
 	$('#search-form #customerName-tf').text('Customer Name');
 	$('#search-form #add1-tf').text('Address Line 1 information');
 	$('#search-form #add2-tf').text('Address Line 2 information');
+	$('#search-form #state-tf').text('Enter State');
 	$('#search-form #city-tf').text('Enter City');
 	$('#search-form #zip-tf').text('Enter ZIP Code');
 	$('#search-form-btn1').html('Cancel');

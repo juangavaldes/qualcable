@@ -3,8 +3,8 @@ function SearchValidator()
 {
 // build array maps of the form inputs & control groups //
 
-	this.formFields = [$('#customerName-tf'), $('#add1-tf'), $('#add2-tf'), $('#zip-tf')];
-	this.controlGroups = [$('#customerName-cg'), $('#add1-cg'), $('#add2-cg'), $('#zip-cg')];
+	this.formFields = [$('#customerName-tf'), $('#add1-tf'), $('#add2-tf'), $('state-list'), $('city-tf'),$('#zip-tf')];
+	this.controlGroups = [$('#customerName-cg'), $('#add1-cg'), $('#add2-cg'), $('#state-cg'),$('#city-cg'),$('#zip-cg')];
 	
 // bind the form-error modal window to this controller to display any errors //
 	
@@ -16,6 +16,12 @@ function SearchValidator()
 		var re = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
 		return re.test(e);
 	}	
+
+	this.validateNotEmpty = function(e)
+	{
+		var re = /^$|\s+/;
+		return re.test(e);
+	}
 	
 	this.showErrors = function(a)
 	{
@@ -38,8 +44,23 @@ SearchValidator.prototype.validateForm = function()
 {
 	var e = [];
 	for (var i=0; i < this.controlGroups.length; i++) this.controlGroups[i].removeClass('error');
-	if (this.validateZip(this.formFields[3].val()) == false) {
-		this.controlGroups[3].addClass('error'); e.push('Please Enter A Valid Zip Code');
+	if(this.validateNotEmpty(this.formFields[0].val())==true){
+		this.controlGroups[0].addClass('error'); e.push('Please Enter A Valid Value for Customer Name');
+	}
+	if(this.validateNotEmpty(this.formFields[1].val())==true){
+		this.controlGroups[1].addClass('error'); e.push('Please Enter A Valid Value for Address Line 1');
+	}
+	if(this.validateNotEmpty(this.formFields[2].val())==true){
+		this.controlGroups[2].addClass('error'); e.push('Please Enter A Valid Value for Address Line 2');
+	}
+	if($('#state-list').val()=='Please select a state'){
+		this.controlGroups[3].addClass('error'); e.push('Please Enter A Valid Value for State');
+	}
+	if(this.validateNotEmpty(this.formFields[4].val())==true){
+		this.controlGroups[4].addClass('error'); e.push('Please Enter A Valid Value for City');
+	}	
+	if (this.validateZip(this.formFields[5].val()) == false) {
+		this.controlGroups[5].addClass('error'); e.push('Please Enter A Valid Zip Code');
 	}
 	if (e.length) this.showErrors(e);
 	return e.length === 0;
