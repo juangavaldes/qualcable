@@ -2,18 +2,8 @@
 extends layout
 
 block content		
-	h1.logintle CableQual
-	br
-	div.logintext
-		span CableQual is the leading address qualifier for Cable services. We have deals with the vast majority of Cable companies and provide agents a single place to quote multi-site deals covered by different carrier footprints. Don't waste your time going one by one to each carrier and figuring out if your locations are inside a Cable Company's footprint. We've already done that for you! CableQual is your access to simple and fast pricing. Sign up today!
-	br
-	br
-	br
 	div.container
-		div.logintext2.first
-			h4 Why Cable?
-			span Cable operators of all sizes have found growing opportunities to take part in the lucrative and ever-evolving business services space.Small and midsized businesses have been the bread and butter business target for cable operators from the start. SMBs find in cable, affordable internet at great speeds and fast install times than more expensive Business class solutions that are more expensive.
-		#login.loginForm.second
+		#login.loginForm.center-vertical
 			form.well(id='form-login', method='post')
 				h3 Please Login!
 				h6 Log into your account
@@ -39,9 +29,6 @@ block content
 						a(href='/signup') Create An Account
 				.clearfix
 	br
-	div.logintext
-		h4 Become an Agent
-		span We've made the process incredily simple. Sign up online and we'll reach out to you within 24 hours to set up your account. Once you have it, you inmediately can start quoting and ordering online. We offer a competitive comissions agreement, and a great online tool that enables you to sell cable services right away.
 	include modals/alert
 	include modals/lost-password
 
