@@ -192,6 +192,7 @@ h6 {
   height: 100vh;
 }
 .center-vertical form {
+  padding-top: 30px;
   top: 50%;
   margin: auto;
   position: relative;
