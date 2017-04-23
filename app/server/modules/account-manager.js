@@ -308,3 +308,15 @@ exports.updateOrders = function(orderID, orderstatus, callback)
 {
 	orders.update({'_id': getObjectId(orderID)}, { $set: {'status': orderstatus}}, callback);	
 }
+
+exports.getOrdersByUserId = function(userID, callback)
+{	
+	orders.find({'userID': userID}).toArray(
+		function(e, res) {
+		if (e){ 
+			callback(e)
+			console.log(e);
+		}
+		else callback(null, res)
+	});
+}

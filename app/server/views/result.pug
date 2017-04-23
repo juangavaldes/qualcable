@@ -3,15 +3,17 @@ block content
 	input(type='hidden', value= user._id)#userId
 	service=typeof(sdata) != 'undefined' ? sdata : { }
 block content
-	div.well
-		nav.navbar.navbar-default.navbar-fixed-top
-			.container
-				.navbar-header
-					.navbar-brand Control Panel
-				ul.nav.navbar-nav.navbar-right
-					li
-						.navbar-btn#btn-logout.btn.btn-default
-							| Sign Out
+	
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			ul.nav.navbar-nav.navbar-left
+				a(href='/admin').navbar-btn.btn.btn-default CableQual
+			ul.nav.navbar-nav.navbar-left
+				a(href='/orders').navbar-btn.btn.btn-default My Orders			
+			ul.nav.navbar-nav.navbar-right
+				li
+					.navbar-btn#btn-logout.btn.btn-default
+						| Sign Out
 	div
 		p
 	#result
@@ -22,7 +24,7 @@ block content
 			h6 Look at your results below
 			div.marglftrgt
 				div.table-responsive
-					table#tblproviders.table-bordered.table-striped.table
+					table#tblproviders.table-bordered.table-striped.table.tbl-displayed
 						thead
 							tr
 								th Provider
@@ -41,7 +43,7 @@ block content
 									- i += 1
 			
 				div.table-responsive
-					table#tblprices.table-bordered.table-striped.table
+					table#tblprices.table-bordered.table-striped.table.tbl-displayed
 						thead
 							tr 
 								th Speed/Price

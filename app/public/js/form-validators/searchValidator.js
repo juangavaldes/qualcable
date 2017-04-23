@@ -56,9 +56,6 @@ SearchValidator.prototype.validateForm = function()
 	if(this.validateNotEmpty(this.formFields[1].val())==true){
 		this.controlGroups[1].addClass('error'); e.push('Please Enter A Valid Value for Address Line 1');
 	}
-	if(this.validateNotEmpty(this.formFields[2].val())==true){
-		this.controlGroups[2].addClass('error'); e.push('Please Enter A Valid Value for Address Line 2');
-	}
 	if($('#state-list').val()=='Please select a state'){
 		this.controlGroups[3].addClass('error'); e.push('Please Enter A Valid Value for State');
 	}

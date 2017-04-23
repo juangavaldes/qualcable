@@ -2,29 +2,32 @@ extends layout
 block content
 	orders=typeof(odata) != 'undefined' ? odata : { }
 	ostatus=typeof(ostat) != 'undefined' ? ostat : { }
+	ouser=typeof(udata) != 'undefined' ? udata : { }
 	input(type='hidden', value= user._id)#userId
 
 block content
-	div.well
-		nav.navbar.navbar-default.navbar-fixed-top
-			.container
-				.navbar-header
-					.navbar-brand View Orders
-				ul.nav.navbar-nav.navbar-right
-					li
-						.navbar-btn#btn-logout.btn.btn-default
-							| Sign Out
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			ul.nav.navbar-nav.navbar-left
+				a(href='/admin').navbar-btn.btn.btn-default CableQual
+			ul.nav.navbar-nav.navbar-left
+				a(href='/orders').navbar-btn.btn.btn-default My Orders			
+			ul.nav.navbar-nav.navbar-right
+				li
+					.navbar-btn#btn-logout.btn.btn-default
+						| Sign Out
 	div
 		p
 	#orders
-		h2 View Orders!
+		h2 Orders
+			br
 			h6 Filter Down and find orders
 		form(id='orders-form', method='post')
 			
 			h6 Look at your results below
 			div.marglftrgt
 				div.table-responsive
-					table#tblorders.table-bordered.table-striped.table
+					table#tblorders.table-bordered.table-striped.table.tbl-displayed
 						thead
 							tr
 								th Date
@@ -41,16 +44,19 @@ block content
 									td= orders.userID
 									td= orders.customerName
 									td= orders.zip
-									td 
-										select.orderselect
-											for item in ostat							
-												option(selected=orders.status == item) #{item}
 									td
-										input(type='radio', class='ordersRad', name='orderRad', value=orders._id, checked='')
+										select.orderselect
+											for item in ostat	
+												if udata.admin == undefined 
+													option(selected=orders.status == item disabled) #{item}
+												else				
+													option(selected=orders.status == item) #{item}
+									td
+										input(type='radio', class='ordersRad', name='orderRad', value=orders._id)
 									- i += 1
 			
 				div.table-responsive
-					table#tblordersdtl.table-bordered.table-striped.table
+					table#tblordersdtl.table-bordered.table-striped.table.tbl-displayed
 						thead
 							tr 
 								th OrderId
@@ -62,7 +68,10 @@ block content
 								th Zip
 						tbody
 			div.col-md-offset-3.col-md-6
-				button(type='button' disabled)#orders-form-btn1.btn.btn-primary.center
+				if udata.admin == undefined 
+					button(type='button' disabled style='display: none;')#orders-form-btn1.btn.btn-primary.center
+				else				
+					button(type='button' disabled)#orders-form-btn1.btn.btn-primary.center
 	include modals/form-errors
 	include modals/alert
 	include modals/confirm

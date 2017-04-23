@@ -1,0 +1,42 @@
+extends layout
+block content
+
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			ul.nav.navbar-nav.navbar-left
+				a(href='/admin').navbar-btn.btn.btn-default CableQual
+			ul.nav.navbar-nav.navbar-left
+				a(href='/orders').navbar-btn.btn.btn-default My Orders			
+			ul.nav.navbar-nav.navbar-right
+				li
+					.navbar-btn#btn-logout.btn.btn-default
+						| Sign Out
+	div
+		p
+	#login.center-vertical
+		h2 Control Panel
+	
+		h6 Click on an Option
+		div.marglftrgt
+			div.table-responsive
+				table.table
+					tr
+						td
+							button(type='button' onclick="location.href='/orders'")#admin-opt-btn1.btn.btn-primary
+						td
+							button(type='button' onclick="location.href='/users'")#admin-opt-btn2.btn.btn-primary
+					tr
+						td
+							button(type='button')#admin-opt-btn3.btn.btn-primary
+						td
+							button(type='button' onclick="location.href='/search'")#admin-opt-btn4.btn.btn-primary
+
+	include modals/form-errors
+	include modals/alert
+	include modals/confirm
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/admin.js')
+	script(src='/js/controllers/adminController.js')

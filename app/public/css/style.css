@@ -16,6 +16,7 @@ body {
   -o-background-size: cover;
 }
 h2 {
+  padding-top: 50px;
   margin: 0 0 6px 0;
   font-weight: bold;
 }
@@ -222,10 +223,7 @@ h6 {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-#tblproviders {
-  background-color: #808080;
-}
-#tblprices {
+.tbl-displayed {
   background-color: #808080;
 }
 .searchpage {
