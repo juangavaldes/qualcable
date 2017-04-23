@@ -1,0 +1,21 @@
+provider,price,zone
+Fidelity,5M/512K $65/month,A
+Fidelity,10M/1M $85/month,A
+Fidelity,25M/4M $105/month,A
+Fidelity,75M/6M $135/month,A
+Fidelity,128M/8M $309/month,A
+Fidelity,5M/512K $65/month,B
+Fidelity,10M/1M $75/month,B
+Fidelity,25M/4M $85/month,B
+Fidelity,75M/6M $95/month,B
+Fidelity,128M/8M $199/month,B
+Fidelity,5M/512K $65/month,C
+Fidelity,10M/1M $85/month,C
+Fidelity,25M/4M $135/month,C
+Fidelity,75M/6M $175/month,C
+Fidelity,128M/8M $309/month,C
+Fidelity,5M/512K $65/month,D
+Fidelity,10M/1M $85/month,D
+Fidelity,25M/4M $145/month,D
+Fidelity,75M/6M $345/month,D
+Fidelity,128M/8M $545/month,D
