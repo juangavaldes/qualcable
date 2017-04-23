@@ -1,4 +1,4 @@
-function UserController()
+function AdminController()
 {
 	// bind event listeners to button clicks //
 	var that = this;
@@ -7,7 +7,7 @@ function UserController()
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
 
 // redirect to homepage when cancel button is clicked //
-	$('#user-form-btn1').click(function(){ window.location.href = '/search';});
+	$('#admin-form-btn1').click(function(){ window.location.href = '/search';});
 
 	this.attemptLogout = function()
 	{
@@ -32,12 +32,4 @@ function UserController()
 		$('.modal-alert button').click(function(){window.location.href = '/';})
 		setTimeout(function(){window.location.href = '/';}, 3000);
 	}
-}
-UserController.prototype.onUpdateSuccess = function()
-{
-	$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
-	$('.modal-alert .modal-header h4').text('Success!');
-	$('.modal-alert .modal-body p').html('Your search has been submitted.');
-	$('.modal-alert').modal('show');
-	$('.modal-alert button').off('click');
 }

@@ -55,7 +55,7 @@ function ResultController()
 			type: "POST",
 			contentType: 'application/json',
 			data: JSON.stringify(data),
-			success: function(dat){		
+			success: function(dat){	
 		    	for (i = 0; i < dat.length; i++) {
 		    		var temp = dat[i];		    		
 		       		$('#tblprices tbody').append('<tr><td>'+temp['price']+'</td><td>'+temp['additional']+'</td><td><input type="radio" class="priceRad" name="priceRad" checked="" value="'+temp['_id']+'"></td></tr>');

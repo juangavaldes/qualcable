@@ -18,8 +18,11 @@ module.exports = function(app) {
 			AM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
 				if (o != null){
 				    req.session.user = o;
-
-					res.redirect('/search');
+				    if(req.session.user.admin == true){
+						res.redirect('/admin');
+					}	else{
+						res.redirect('/search');
+					}
 				}	else{
 					res.render('login', { title: 'Hello - Please Login To Your Account' });
 				}
@@ -41,48 +44,6 @@ module.exports = function(app) {
 			}
 		});
 	});
-	
-// logged-in user homepage //
-	
-	app.get('/home', function(req, res) {
-		if (req.session.user == null){
-	// if user is not logged-in redirect back to login page //
-			res.redirect('/');
-		}	else{
-			res.render('home', {
-				title : 'Control Panel',
-				countries : CT,
-				udata : req.session.user
-			});
-		}
-	});
-	
-	app.post('/home', function(req, res){
-		if (req.session.user == null){
-			res.redirect('/');
-		}	else{
-			AM.updateAccount({
-				id		: req.session.user._id,
-				name	: req.body['name'],
-				email	: req.body['email'],
-				pass	: req.body['pass'],
-				country	: req.body['country']
-			}, function(e, o){
-				if (e){
-					res.status(400).send('error-updating-account');
-				}	else{
-					req.session.user = o;
-			// update the user's login cookies if they exists //
-					if (req.cookies.user != undefined && req.cookies.pass != undefined){
-						res.cookie('user', o.user, { maxAge: 900000 });
-						res.cookie('pass', o.pass, { maxAge: 900000 });	
-					}
-					res.status(200).send('ok');
-				}
-			});
-		}
-	});
-
 	// logged-in user searchpage //
 	
 	app.get('/search', function(req, res) {
@@ -90,17 +51,12 @@ module.exports = function(app) {
 	// if user is not logged-in redirect back to login page //
 			res.redirect('/');
 		}else{
-			if(req.session.admin == true){
-				res.redirect('/orders');
-			}
-			else{
-				res.render('search', {
-					title : 'Search Service',
-					states : ST,
-					cities : CS,
-					udata : req.session.user
-				});
-			}
+			res.render('search', {
+				title : 'Search Service',
+				states : ST,
+				cities : CS,
+				udata : req.session.user
+			});
 		}
 	});
 	
@@ -275,41 +231,19 @@ module.exports = function(app) {
 	// admin homepage //
 	
 	app.get('/admin', function(req, res) {
-		if (req.session.user == null || req.session.admin== false){
+		if (req.session.user == null){
 			console.log(req.session);
 	// if user is not logged-in redirect back to login page //
 			res.redirect('/');
 		}	else{
-			res.render('admin', {
-				title : 'Administrator View',
-				udata : req.session.user
-			});
-		}
-	});
-	
-	app.post('/admin', function(req, res){
-		if (req.session.user == null){
-			res.redirect('/');
-		}	else{
-			AM.updateAccount({
-				id		: req.session.user._id,
-				name	: req.body['name'],
-				email	: req.body['email'],
-				pass	: req.body['pass'],
-				country	: req.body['country']
-			}, function(e, o){
-				if (e){
-					res.status(400).send('error-updating-account');
-				}	else{
-					req.session.user = o;
-			// update the user's login cookies if they exists //
-					if (req.cookies.user != undefined && req.cookies.pass != undefined){
-						res.cookie('user', o.user, { maxAge: 900000 });
-						res.cookie('pass', o.pass, { maxAge: 900000 });	
-					}
-					res.status(200).send('ok');
-				}
-			});
+			if(req.session.user.admin == undefined){
+				res.redirect('/search');
+			}	else{	
+				res.render('admin', {
+					title : 'Administrator View',
+					udata : req.session.user
+				});
+			}
 		}
 	});
 
@@ -318,30 +252,46 @@ module.exports = function(app) {
 	app.get('/orders', function(req, res) {
 		var ostat= ["new","in-progress","completed","cancelled"];
 		var odata;
-		if (req.session.user == null || req.session.admin== false){
+		if (req.session.user == null){
 			console.log(req.session);
 	// if user is not logged-in redirect back to login page //
 			res.redirect('/');
 		}	else{
-			AM.getAllOrders(function(e, o){
-				if (e){
-					res.status(400).send('orders-returne-no-results');
-				}	else{					
-					odata = o;	
-					res.render('orders', {
-						title : 'View Orders',
-						odata : odata,
-						ostat : ostat,
-						udata : req.session.user
-					});							
-				}
-			});
-			
-		}
+			if(req.session.user.admin== undefined){
+				AM.getOrdersByUserId(req.session.user._id, function(e, o){
+					if (e){
+						res.status(400).send('orders-returne-no-results');
+					}	else{					
+						odata = o;	
+						res.render('orders', {
+							title : 'View Orders',
+							odata : odata,
+							ostat : ostat,
+							udata : req.session.user
+						});							
+					}
+				});
+			}
+			else{
+				AM.getAllOrders(function(e, o){
+					if (e){
+						res.status(400).send('orders-returne-no-results');
+					}	else{					
+						odata = o;	
+						res.render('orders', {
+							title : 'View Orders',
+							odata : odata,
+							ostat : ostat,
+							udata : req.session.user
+						});							
+					}
+				});
+			}
+		}		
 	});
 
 	app.post('/orders', function(req, res){
-		if (req.session.user == null || req.session.admin== false){
+		if (req.session.user == null || req.session.user.admin== undefined){
 			res.redirect('/');
 		}	else{
 			for(i = 0; i < req.body['_ids'].length; i++){	
@@ -360,12 +310,12 @@ module.exports = function(app) {
 	});
 
 	app.get('/users', function(req, res) {
-		if (req.session.user == null || req.session.admin== false){
+		if (req.session.user == null || req.session.user.admin== undefined){
 			console.log(req.session);
 	// if user is not logged-in redirect back to login page //
 			res.redirect('/');
 		}	else{
-			res.render('users', {
+			res.render('user', {
 				title : 'Manage Users',
 				udata : req.session.user
 			});
