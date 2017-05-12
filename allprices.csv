@@ -1,152 +1,144 @@
 _id,provider,price,additional,zone
-ObjectId(58a9f65ffeb2b13a561c45eb),Cox,3 x 1: $99/month,"1 Static IP address, additional are $3/month/IP",C
-ObjectId(58a9f730feb2b13a561c45f5),Cox,30 x 30: $9/month,"1 Static IP address, additional are $3/month/IP",B
-ObjectId(58a9f72cfeb2b13a561c45f4),Cox,30 x 30: $9/month,"1 Static IP address, additional are $2/month/IP",B
-ObjectId(58a9f71efeb2b13a561c45f3),Cox,20 x 20: $599/month,"1 Static IP address, additional are $5/month/IP",A
-ObjectId(58a9f710feb2b13a561c45f2),Cox,20 x 20: $599/month,"1 Static IP address, additional are $2/month/IP",A
-ObjectId(58a9f6f5feb2b13a561c45f1),Cox,300 x 20: $599/month,"1 Static IP address, additional are $3/month/IP",C
-ObjectId(58a9f6ecfeb2b13a561c45f0),Cox,200 x 20: $429/month,"1 Static IP address, additional are $3/month/IP",C
-ObjectId(58a9f6e4feb2b13a561c45ef),Cox,100 x 20: $349/month,"1 Static IP address, additional are $3/month/IP",C
-ObjectId(58a9f6dbfeb2b13a561c45ee),Cox,50 x 10: $279/month,"1 Static IP address, additional are $3/month/IP",C
-ObjectId(58a9f6c7feb2b13a561c45ed),Cox,25 x 5: $189/month,"1 Static IP address, additional are $3/month/IP",C
-ObjectId(58a9f6a9feb2b13a561c45ec),Cox,15 x 3: $135/month,"1 Static IP address, additional are $3/month/IP",C
-ObjectId(58ed9c73e297b67eac82256a),Comcast,16 x 3: $129/month,1 Static IP address and Equipment,C
-ObjectId(58ed9c90e297b67eac82256b),Comcast,25 x 10: $149/month,1 Static IP address and Equipment,C
-ObjectId(58ed9ca1e297b67eac82256c),Comcast,50 x 10: $169/month,1 Static IP address and Equipment,C
-ObjectId(58ed9cb4e297b67eac82256d),Comcast,75 x 15: $199/month,1 Static IP address and Equipment,C
-ObjectId(58ed9cd3e297b67eac82256e),Comcast,100 x 20: $275/month,1 Static IP address and Equipment,C
-ObjectId(58ed9ce9e297b67eac82256f),Comcast,150 x 20: $349/month,1 Static IP address and Equipment,C
-ObjectId(58ed9da8e297b67eac822570),TWC,10 x 1: $109/month,1 Static IP address,C
-ObjectId(58ed9db7e297b67eac822571),TWC,15 x 2: $144/month,1 Static IP address,C
-ObjectId(58ed9dd1e297b67eac822572),TWC,25 x 3: $209/month,1 Static IP address,C
-ObjectId(58ed9de9e297b67eac822573),TWC,50 x 5: $139/month,1 Static IP address,C
-ObjectId(58ed9e09e297b67eac822574),TWC,100 x 10: $299/month,1 Static IP address,C
-ObjectId(58ed9e1ae297b67eac822575),TWC,200 x 15: $499/month,1 Static IP address,C
-ObjectId(58ed9e39e297b67eac822576),TWC,300 x 20: $444/month,1 Static IP address,C
-ObjectId(58ed9f66e297b67eac822577),Atlantic Broadband,25 x 2: $139/month,1 Static IP address,B
-ObjectId(58ed9f7ee297b67eac822578),Atlantic Broadband,50 x 4: $185/month,1 Static IP address,B
-ObjectId(58ed9f90e297b67eac822579),Atlantic Broadband,75 x 6: $299/month,1 Static IP address,B
-ObjectId(58ed9fa5e297b67eac82257a),Atlantic Broadband,120 x 10: $484/month,1 Static IP address,B
-ObjectId(58ed9fb4e297b67eac82257b),Atlantic Broadband,25 x 2: $159/month,1 Static IP address,C
-ObjectId(58ed9fc1e297b67eac82257c),Atlantic Broadband,50 x 4: $209/month,1 Static IP address,C
-ObjectId(58ed9fd3e297b67eac82257d),Atlantic Broadband,75 x 6: $399/month,1 Static IP address,C
-ObjectId(58ed9fe3e297b67eac82257e),Atlantic Broadband,120 x 10: $599/month,1 Static IP address,C
-ObjectId(58eda1a2e297b67eac82257f),Charter/Spectrum,60 x 4: $99/month,1 Static IP address,C
-ObjectId(58eda1b4e297b67eac822580),Charter/Spectrum,100 x 7: $159/month,1 Static IP address,C
-ObjectId(58eda1d5e297b67eac822581),Cable One,15 x 1: $105/month,1 Static IP address,C
-ObjectId(58eda1f7e297b67eac822582),Cable One,50 x 5: $135/month,1 Static IP address,C
-ObjectId(58eda219e297b67eac822583),Cable One,100 x 10: $209/month,1 Static IP address,C
-ObjectId(58eda241e297b67eac822584),Cable One,200 x 20: $435/month,1 Static IP address,C
-ObjectId(58eda29ce297b67eac822585),Mediacom,5 x 1: $99/month,"5 Static IP address available for $20/month, faster speed upon request",C
-ObjectId(58eda2aee297b67eac822586),Mediacom,20 x 2: $185/month,"5 Static IP address available for $20/month, faster speed upon request",C
-ObjectId(58eda2bfe297b67eac822587),Mediacom,50 x 7: $275/month,"5 Static IP address available for $20/month, faster speed upon request",C
-ObjectId(58eda828e297b67eac822588),Baja and Bend Broadband,20 x 4: $99/month,1 Static IP address,C
-ObjectId(58eda836e297b67eac822589),Baja and Bend Broadband,45 x 4: $149/month,1 Static IP address,C
-ObjectId(58eda846e297b67eac82258a),Baja and Bend Broadband,60 x 5: $225/month,1 Static IP address,C
-ObjectId(58eda85ae297b67eac82258b),Baja and Bend Broadband,100 x 10: $499/month,1 Static IP address,C
-ObjectId(58eda881e297b67eac82258c),Optimun/Cablevision,60 x 25: $159/month,1 Static IP address,C
-ObjectId(58eda89ce297b67eac82258d),Optimun/Cablevision,101 x 35: $212/month,1 Static IP address,C
-ObjectId(58eda8c8e297b67eac82258e),Armstrong Cable Co.,50 x 5: $99/month,1 Static IP address,C
-ObjectId(58eda8d5e297b67eac82258f),Armstrong Cable Co.,100 x 10: $159/month,1 Static IP address,C
-ObjectId(58eda8e7e297b67eac822590),Armstrong Cable Co.,200 x 15: $207/month,1 Static IP address,C
-ObjectId(58eda8f6e297b67eac822591),Armstrong Cable Co.,400 x 25: $387/month,1 Static IP address,C
-ObjectId(58eda917e297b67eac822592),Bright House,50 x 5: $151/month,1 Static IP address,C
-ObjectId(58eda926e297b67eac822593),Bright House,100 x 10: $225/month,1 Static IP address,C
-ObjectId(58eda940e297b67eac822594),Bright House,200 x 20: $299/month,1 Static IP address,C
-ObjectId(58eda963e297b67eac822595),Bright House,350 x 25: $369/month,1 Static IP address,C
-ObjectId(58eda984e297b67eac822596),Suddenlink,12 x 2: $86/month,1 Static IP address,C
-ObjectId(58eda990e297b67eac822597),Suddenlink,20 x 5: $106/month,1 Static IP address,C
-ObjectId(58eda99de297b67eac822598),Suddenlink,50 x 8: $123/month,1 Static IP address,C
-ObjectId(58eda9abe297b67eac822599),Suddenlink,75 x 10: $192/month,1 Static IP address,C
-ObjectId(58eda9b8e297b67eac82259a),Suddenlink,150 x 10: $195/month,1 Static IP address,C
-ObjectId(58eda9c5e297b67eac82259b),Suddenlink,200 x 20: $199/month,1 Static IP address,C
-ObjectId(58eda9d1e297b67eac82259c),Suddenlink,300 x 30: $269/month,1 Static IP address,C
-ObjectId(58eda9dce297b67eac82259d),Suddenlink,500 x 50: $343/month,1 Static IP address,C
-ObjectId(58eda9f2e297b67eac82259e),Suddenlink,1000 x 50: $599/month,1 Static IP address,C
-ObjectId(58edaacde297b67eac82259f),Newwave,6 x 1: $89/month,1 Static IP address,C
-ObjectId(58edaadbe297b67eac8225a0),Newwave,10 x 2: $115/month,1 Static IP address,C
-ObjectId(58edaae7e297b67eac8225a1),Newwave,15 x 2: $129/month,1 Static IP address,C
-ObjectId(58edaaf2e297b67eac8225a2),Newwave,30 x 3: $189/month,1 Static IP address,C
-ObjectId(58edaafee297b67eac8225a3),Newwave,50 x 5: $229/month,1 Static IP address,C
-ObjectId(58edab0de297b67eac8225a4),Newwave,30 x 8: $279/month,1 Static IP address,C
-ObjectId(58edab17e297b67eac8225a5),Newwave,50 x 8: $299/month,1 Static IP address,C
-ObjectId(58edab26e297b67eac8225a6),Newwave,100 x 8: $339/month,1 Static IP address,C
-ObjectId(58edab83e297b67eac8225a7),Wow!,8 x 1: $99/month,1 Static IP address,C
-ObjectId(58edab95e297b67eac8225a8),Wow!,30 x 5: $109/month,1 Static IP address,C
-ObjectId(58edabaae297b67eac8225a9),Wow!,60 x 5: $123/month,1 Static IP address,C
-ObjectId(58edabbde297b67eac8225aa),Wow!,110 x 15: $149/month,1 Static IP address,C
-ObjectId(58edabe1e297b67eac8225ab),Wow!,300 x 20: $275/month,1 Static IP address,C
-ObjectId(58edac0fe297b67eac8225ac),Ritter,15 x 2: $155/month,1 Static IP address,C
-ObjectId(58edac1ae297b67eac8225ad),Ritter,30 x 2: $169/month,1 Static IP address,C
-ObjectId(58edac27e297b67eac8225ae),Ritter,50 x 10: $249/month,1 Static IP address,C
-ObjectId(58edac78e297b67eac8225af),Midcontinent,60 x 6: $175/month,,C
-ObjectId(58edac90e297b67eac8225b0),Midcontinent,100 x 10: $255/month,,C
-ObjectId(58edac9be297b67eac8225b1),Midcontinent,200 x 20: $444/month,,C
-ObjectId(58fed19e3c888a01983cec72),Altice USA,12x2 $86/month,,A
-ObjectId(58fed19e3c888a01983cec73),Altice USA,20x5 $105/month,,A
-ObjectId(58fed19e3c888a01983cec74),Altice USA,50x8 $123/month,,A
-ObjectId(58fed19e3c888a01983cec75),Altice USA,60x25 $159/month,,A
-ObjectId(58fed19e3c888a01983cec76),Altice USA,75x10 $192/month,,A
-ObjectId(58fed19e3c888a01983cec77),Altice USA,150x10 $195/month,,A
-ObjectId(58fed19e3c888a01983cec78),Altice USA,200x20 $199/month,,A
-ObjectId(58fed19e3c888a01983cec79),Altice USA,300x30 $269/month,,A
-ObjectId(58fed19e3c888a01983cec7a),Altice USA,500x50 $343/month,,A
-ObjectId(58fed19e3c888a01983cec7b),Altice USA,1000x50 $599/month,,A
-ObjectId(58fed19e3c888a01983cec7c),,,,
-ObjectId(58fed19e3c888a01983cec7d),,,,
-ObjectId(58fed19e3c888a01983cec7e),,,,
-ObjectId(58fed19e3c888a01983cec7f),,,,
-ObjectId(58fed19e3c888a01983cec80),,,,
-ObjectId(58fed19e3c888a01983cec81),,,,
-ObjectId(58fed19e3c888a01983cec82),,,,
-ObjectId(58fed19e3c888a01983cec83),,,,
-ObjectId(58fed1aa3c888a01983cec84),Charter,60x4 $99/month,,A
-ObjectId(58fed1aa3c888a01983cec85),Charter,100x7 $159/month,,A
-ObjectId(58fed1bc3c888a01983cec86),Comcast,16x3 $129 MRC,,A
-ObjectId(58fed1bc3c888a01983cec87),Comcast,25x10 $149 MRC,,A
-ObjectId(58fed1bc3c888a01983cec88),Comcast,50x10 $169 MRC,,A
-ObjectId(58fed1bc3c888a01983cec89),Comcast,75x15 $199 MRC,,A
-ObjectId(58fed1bc3c888a01983cec8a),Comcast,100x20 $275 MRC,,A
-ObjectId(58fed1bc3c888a01983cec8b),Comcast,150x20 $349 MRC,,A
-ObjectId(58fed1cd3c888a01983cec8c),Fidelity,5M/512K $65/month,,A
-ObjectId(58fed1cd3c888a01983cec8d),Fidelity,10M/1M $85/month,,A
-ObjectId(58fed1cd3c888a01983cec8e),Fidelity,25M/4M $105/month,,A
-ObjectId(58fed1cd3c888a01983cec8f),Fidelity,75M/6M $135/month,,A
-ObjectId(58fed1cd3c888a01983cec90),Fidelity,128M/8M $309/month,,A
-ObjectId(58fed1cd3c888a01983cec91),Fidelity,5M/512K $65/month,,B
-ObjectId(58fed1cd3c888a01983cec92),Fidelity,10M/1M $75/month,,B
-ObjectId(58fed1cd3c888a01983cec93),Fidelity,25M/4M $85/month,,B
-ObjectId(58fed1cd3c888a01983cec94),Fidelity,75M/6M $95/month,,B
-ObjectId(58fed1cd3c888a01983cec95),Fidelity,128M/8M $199/month,,B
-ObjectId(58fed1cd3c888a01983cec96),Fidelity,5M/512K $65/month,,C
-ObjectId(58fed1cd3c888a01983cec97),Fidelity,10M/1M $85/month,,C
-ObjectId(58fed1cd3c888a01983cec98),Fidelity,25M/4M $135/month,,C
-ObjectId(58fed1cd3c888a01983cec99),Fidelity,75M/6M $175/month,,C
-ObjectId(58fed1cd3c888a01983cec9a),Fidelity,128M/8M $309/month,,C
-ObjectId(58fed1cd3c888a01983cec9b),Fidelity,5M/512K $65/month,,D
-ObjectId(58fed1cd3c888a01983cec9c),Fidelity,10M/1M $85/month,,D
-ObjectId(58fed1cd3c888a01983cec9d),Fidelity,25M/4M $145/month,,D
-ObjectId(58fed1cd3c888a01983cec9e),Fidelity,75M/6M $345/month,,D
-ObjectId(58fed1cd3c888a01983cec9f),Fidelity,128M/8M $545/month,,D
-ObjectId(58fed1e13c888a01983ceca0),Service Electric,8 x 2 $99,,A
-ObjectId(58fed1e13c888a01983ceca1),Service Electric,12 x 2 $149,,A
-ObjectId(58fed1e13c888a01983ceca2),Service Electric,25 x 3 $189,,A
-ObjectId(58fed1e13c888a01983ceca3),Service Electric,35 x 3 $209,,A
-ObjectId(58fed1e13c888a01983ceca4),Service Electric,50 x 5 $229,,A
-ObjectId(58fed1e13c888a01983ceca5),Service Electric,100 x 5 $319,,A
-ObjectId(58fed1e13c888a01983ceca6),Service Electric,8 x 2 $99,,B
-ObjectId(58fed1e13c888a01983ceca7),Service Electric,12 x 2 $109,,B
-ObjectId(58fed1e13c888a01983ceca8),Service Electric,25 x 3 $139,,B
-ObjectId(58fed1e13c888a01983ceca9),Service Electric,35 x 3 $149,,B
-ObjectId(58fed1e13c888a01983cecaa),Service Electric,50 x 5 $185,,B
-ObjectId(58fed1e13c888a01983cecab),Service Electric,100 x 5 $259,,B
-ObjectId(58fed1e13c888a01983cecac),Service Electric,8 x 2 $99,,C
-ObjectId(58fed1e13c888a01983cecad),Service Electric,12 x 2 $149,,C
-ObjectId(58fed1e13c888a01983cecae),Service Electric,25 x 3 $189,,C
-ObjectId(58fed1e13c888a01983cecaf),Service Electric,35 x 3 $209,,C
-ObjectId(58fed1e13c888a01983cecb0),Service Electric,50 x 5 $229,,C
-ObjectId(58fed1e13c888a01983cecb1),Service Electric,100 x 5 $289,,C
-ObjectId(58fed1ef3c888a01983cecb2),TDS Baja,20 x 4 $99,* includes 1 static IP address,A
-ObjectId(58fed1ef3c888a01983cecb3),TDS Baja,45 x 4 $149,* includes 1 static IP address,A
-ObjectId(58fed1ef3c888a01983cecb4),TDS Baja,60 x 5 $225,* includes 1 static IP address,A
-ObjectId(58fed1ef3c888a01983cecb5),TDS Baja,100 x 10 $499,* includes 1 static IP address,A
+ObjectId(58a9f65ffeb2b13a561c45eb),Cox,3 x 1: $99/month,Free Install – Static IP address included,C
+ObjectId(58a9f730feb2b13a561c45f5),Cox,30 x 30: $9/month,Free Install – Static IP address included,B
+ObjectId(58a9f72cfeb2b13a561c45f4),Cox,30 x 30: $9/month,Free Install – Static IP address included,B
+ObjectId(58a9f71efeb2b13a561c45f3),Cox,20 x 20: $599/month,Free Install – Static IP address included,A
+ObjectId(58a9f710feb2b13a561c45f2),Cox,20 x 20: $599/month,Free Install – Static IP address included,A
+ObjectId(58a9f6f5feb2b13a561c45f1),Cox,300 x 20: $599/month,Free Install – Static IP address included,C
+ObjectId(58a9f6ecfeb2b13a561c45f0),Cox,200 x 20: $429/month,Free Install – Static IP address included,C
+ObjectId(58a9f6e4feb2b13a561c45ef),Cox,100 x 20: $349/month,Free Install – Static IP address included,C
+ObjectId(58a9f6dbfeb2b13a561c45ee),Cox,50 x 10: $279/month,Free Install – Static IP address included,C
+ObjectId(58a9f6c7feb2b13a561c45ed),Cox,25 x 5: $189/month,Free Install – Static IP address included,C
+ObjectId(58a9f6a9feb2b13a561c45ec),Cox,15 x 3: $135/month,Free Install – Static IP address included,C
+ObjectId(58ed9c73e297b67eac82256a),Comcast,16 x 3: $129/month,Free Install – Static IP address included,C
+ObjectId(58ed9c90e297b67eac82256b),Comcast,25 x 10: $149/month,Free Install – Static IP address included,C
+ObjectId(58ed9ca1e297b67eac82256c),Comcast,50 x 10: $169/month,Free Install – Static IP address included,C
+ObjectId(58ed9cb4e297b67eac82256d),Comcast,75 x 15: $199/month,Free Install – Static IP address included,C
+ObjectId(58ed9cd3e297b67eac82256e),Comcast,100 x 20: $275/month,Free Install – Static IP address included,C
+ObjectId(58ed9ce9e297b67eac82256f),Comcast,150 x 20: $349/month,Free Install – Static IP address included,C
+ObjectId(58ed9da8e297b67eac822570),TWC,10 x 1: $109/month,Free Install – Static IP address included,C
+ObjectId(58ed9db7e297b67eac822571),TWC,15 x 2: $144/month,Free Install – Static IP address included,C
+ObjectId(58ed9dd1e297b67eac822572),TWC,25 x 3: $209/month,Free Install – Static IP address included,C
+ObjectId(58ed9de9e297b67eac822573),TWC,50 x 5: $139/month,Free Install – Static IP address included,C
+ObjectId(58ed9e09e297b67eac822574),TWC,100 x 10: $299/month,Free Install – Static IP address included,C
+ObjectId(58ed9e1ae297b67eac822575),TWC,200 x 15: $499/month,Free Install – Static IP address included,C
+ObjectId(58ed9e39e297b67eac822576),TWC,300 x 20: $444/month,Free Install – Static IP address included,C
+ObjectId(58ed9f66e297b67eac822577),Atlantic Broadband,25 x 2: $139/month,Free Install – Static IP address included,B
+ObjectId(58ed9f7ee297b67eac822578),Atlantic Broadband,50 x 4: $185/month,Free Install – Static IP address included,B
+ObjectId(58ed9f90e297b67eac822579),Atlantic Broadband,75 x 6: $299/month,Free Install – Static IP address included,B
+ObjectId(58ed9fa5e297b67eac82257a),Atlantic Broadband,120 x 10: $484/month,Free Install – Static IP address included,B
+ObjectId(58ed9fb4e297b67eac82257b),Atlantic Broadband,25 x 2: $159/month,Free Install – Static IP address included,C
+ObjectId(58ed9fc1e297b67eac82257c),Atlantic Broadband,50 x 4: $209/month,Free Install – Static IP address included,C
+ObjectId(58ed9fd3e297b67eac82257d),Atlantic Broadband,75 x 6: $399/month,Free Install – Static IP address included,C
+ObjectId(58ed9fe3e297b67eac82257e),Atlantic Broadband,120 x 10: $599/month,Free Install – Static IP address included,C
+ObjectId(58eda1a2e297b67eac82257f),Charter/Spectrum,60 x 4: $99/month,Free Install – Static IP address included,C
+ObjectId(58eda1b4e297b67eac822580),Charter/Spectrum,100 x 7: $159/month,Free Install – Static IP address included,C
+ObjectId(58eda1d5e297b67eac822581),Cable One,15 x 1: $105/month,Free Install – Static IP address included,C
+ObjectId(58eda1f7e297b67eac822582),Cable One,50 x 5: $135/month,Free Install – Static IP address included,C
+ObjectId(58eda219e297b67eac822583),Cable One,100 x 10: $209/month,Free Install – Static IP address included,C
+ObjectId(58eda241e297b67eac822584),Cable One,200 x 20: $435/month,Free Install – Static IP address included,C
+ObjectId(58eda29ce297b67eac822585),Mediacom,5 x 1: $99/month,Free Install – Static IP address included,C
+ObjectId(58eda2aee297b67eac822586),Mediacom,20 x 2: $185/month,Free Install – Static IP address included,C
+ObjectId(58eda2bfe297b67eac822587),Mediacom,50 x 7: $275/month,Free Install – Static IP address included,C
+ObjectId(58eda828e297b67eac822588),Baja and Bend Broadband,20 x 4: $99/month,Free Install – Static IP address included,C
+ObjectId(58eda836e297b67eac822589),Baja and Bend Broadband,45 x 4: $149/month,Free Install – Static IP address included,C
+ObjectId(58eda846e297b67eac82258a),Baja and Bend Broadband,60 x 5: $225/month,Free Install – Static IP address included,C
+ObjectId(58eda85ae297b67eac82258b),Baja and Bend Broadband,100 x 10: $499/month,Free Install – Static IP address included,C
+ObjectId(58eda881e297b67eac82258c),Optimun/Cablevision,60 x 25: $159/month,Free Install – Static IP address included,C
+ObjectId(58eda89ce297b67eac82258d),Optimun/Cablevision,101 x 35: $212/month,Free Install – Static IP address included,C
+ObjectId(58eda8c8e297b67eac82258e),Armstrong Cable Co.,50 x 5: $99/month,Free Install – Static IP address included,C
+ObjectId(58eda8d5e297b67eac82258f),Armstrong Cable Co.,100 x 10: $159/month,Free Install – Static IP address included,C
+ObjectId(58eda8e7e297b67eac822590),Armstrong Cable Co.,200 x 15: $207/month,Free Install – Static IP address included,C
+ObjectId(58eda8f6e297b67eac822591),Armstrong Cable Co.,400 x 25: $387/month,Free Install – Static IP address included,C
+ObjectId(58eda917e297b67eac822592),Bright House,50 x 5: $151/month,Free Install – Static IP address included,C
+ObjectId(58eda926e297b67eac822593),Bright House,100 x 10: $225/month,Free Install – Static IP address included,C
+ObjectId(58eda940e297b67eac822594),Bright House,200 x 20: $299/month,Free Install – Static IP address included,C
+ObjectId(58eda963e297b67eac822595),Bright House,350 x 25: $369/month,Free Install – Static IP address included,C
+ObjectId(58eda984e297b67eac822596),Suddenlink,12 x 2: $86/month,Free Install – Static IP address included,C
+ObjectId(58eda990e297b67eac822597),Suddenlink,20 x 5: $106/month,Free Install – Static IP address included,C
+ObjectId(58eda99de297b67eac822598),Suddenlink,50 x 8: $123/month,Free Install – Static IP address included,C
+ObjectId(58eda9abe297b67eac822599),Suddenlink,75 x 10: $192/month,Free Install – Static IP address included,C
+ObjectId(58eda9b8e297b67eac82259a),Suddenlink,150 x 10: $195/month,Free Install – Static IP address included,C
+ObjectId(58eda9c5e297b67eac82259b),Suddenlink,200 x 20: $199/month,Free Install – Static IP address included,C
+ObjectId(58eda9d1e297b67eac82259c),Suddenlink,300 x 30: $269/month,Free Install – Static IP address included,C
+ObjectId(58eda9dce297b67eac82259d),Suddenlink,500 x 50: $343/month,Free Install – Static IP address included,C
+ObjectId(58eda9f2e297b67eac82259e),Suddenlink,1000 x 50: $599/month,Free Install – Static IP address included,C
+ObjectId(58edaacde297b67eac82259f),Newwave,6 x 1: $89/month,Free Install – Static IP address included,C
+ObjectId(58edaadbe297b67eac8225a0),Newwave,10 x 2: $115/month,Free Install – Static IP address included,C
+ObjectId(58edaae7e297b67eac8225a1),Newwave,15 x 2: $129/month,Free Install – Static IP address included,C
+ObjectId(58edaaf2e297b67eac8225a2),Newwave,30 x 3: $189/month,Free Install – Static IP address included,C
+ObjectId(58edaafee297b67eac8225a3),Newwave,50 x 5: $229/month,Free Install – Static IP address included,C
+ObjectId(58edab0de297b67eac8225a4),Newwave,30 x 8: $279/month,Free Install – Static IP address included,C
+ObjectId(58edab17e297b67eac8225a5),Newwave,50 x 8: $299/month,Free Install – Static IP address included,C
+ObjectId(58edab26e297b67eac8225a6),Newwave,100 x 8: $339/month,Free Install – Static IP address included,C
+ObjectId(58edab83e297b67eac8225a7),Wow!,8 x 1: $99/month,Free Install – Static IP address included,C
+ObjectId(58edab95e297b67eac8225a8),Wow!,30 x 5: $109/month,Free Install – Static IP address included,C
+ObjectId(58edabaae297b67eac8225a9),Wow!,60 x 5: $123/month,Free Install – Static IP address included,C
+ObjectId(58edabbde297b67eac8225aa),Wow!,110 x 15: $149/month,Free Install – Static IP address included,C
+ObjectId(58edabe1e297b67eac8225ab),Wow!,300 x 20: $275/month,Free Install – Static IP address included,C
+ObjectId(58edac0fe297b67eac8225ac),Ritter,15 x 2: $155/month,Free Install – Static IP address included,C
+ObjectId(58edac1ae297b67eac8225ad),Ritter,30 x 2: $169/month,Free Install – Static IP address included,C
+ObjectId(58edac27e297b67eac8225ae),Ritter,50 x 10: $249/month,Free Install – Static IP address included,C
+ObjectId(58edac78e297b67eac8225af),Midcontinent,60 x 6: $175/month,Free Install – Static IP address included,C
+ObjectId(58edac90e297b67eac8225b0),Midcontinent,100 x 10: $255/month,Free Install – Static IP address included,C
+ObjectId(58edac9be297b67eac8225b1),Midcontinent,200 x 20: $444/month,Free Install – Static IP address included,C
+ObjectId(58fed19e3c888a01983cec72),Altice USA,12x2 $86/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec73),Altice USA,20x5 $105/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec74),Altice USA,50x8 $123/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec75),Altice USA,60x25 $159/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec76),Altice USA,75x10 $192/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec77),Altice USA,150x10 $195/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec78),Altice USA,200x20 $199/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec79),Altice USA,300x30 $269/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec7a),Altice USA,500x50 $343/month,Free Install – Static IP address included,A
+ObjectId(58fed19e3c888a01983cec7b),Altice USA,1000x50 $599/month,Free Install – Static IP address included,A
+ObjectId(58fed1aa3c888a01983cec84),Charter,60x4 $99/month,Free Install – Static IP address included,A
+ObjectId(58fed1aa3c888a01983cec85),Charter,100x7 $159/month,Free Install – Static IP address included,A
+ObjectId(58fed1bc3c888a01983cec86),Comcast,16x3 $129 MRC,Free Install – Static IP address included,A
+ObjectId(58fed1bc3c888a01983cec87),Comcast,25x10 $149 MRC,Free Install – Static IP address included,A
+ObjectId(58fed1bc3c888a01983cec88),Comcast,50x10 $169 MRC,Free Install – Static IP address included,A
+ObjectId(58fed1bc3c888a01983cec89),Comcast,75x15 $199 MRC,Free Install – Static IP address included,A
+ObjectId(58fed1bc3c888a01983cec8a),Comcast,100x20 $275 MRC,Free Install – Static IP address included,A
+ObjectId(58fed1bc3c888a01983cec8b),Comcast,150x20 $349 MRC,Free Install – Static IP address included,A
+ObjectId(58fed1cd3c888a01983cec8c),Fidelity,5M/512K $65/month,Free Install – Static IP address included,A
+ObjectId(58fed1cd3c888a01983cec8d),Fidelity,10M/1M $85/month,Free Install – Static IP address included,A
+ObjectId(58fed1cd3c888a01983cec8e),Fidelity,25M/4M $105/month,Free Install – Static IP address included,A
+ObjectId(58fed1cd3c888a01983cec8f),Fidelity,75M/6M $135/month,Free Install – Static IP address included,A
+ObjectId(58fed1cd3c888a01983cec90),Fidelity,128M/8M $309/month,Free Install – Static IP address included,A
+ObjectId(58fed1cd3c888a01983cec91),Fidelity,5M/512K $65/month,Free Install – Static IP address included,B
+ObjectId(58fed1cd3c888a01983cec92),Fidelity,10M/1M $75/month,Free Install – Static IP address included,B
+ObjectId(58fed1cd3c888a01983cec93),Fidelity,25M/4M $85/month,Free Install – Static IP address included,B
+ObjectId(58fed1cd3c888a01983cec94),Fidelity,75M/6M $95/month,Free Install – Static IP address included,B
+ObjectId(58fed1cd3c888a01983cec95),Fidelity,128M/8M $199/month,Free Install – Static IP address included,B
+ObjectId(58fed1cd3c888a01983cec96),Fidelity,5M/512K $65/month,Free Install – Static IP address included,C
+ObjectId(58fed1cd3c888a01983cec97),Fidelity,10M/1M $85/month,Free Install – Static IP address included,C
+ObjectId(58fed1cd3c888a01983cec98),Fidelity,25M/4M $135/month,Free Install – Static IP address included,C
+ObjectId(58fed1cd3c888a01983cec99),Fidelity,75M/6M $175/month,Free Install – Static IP address included,C
+ObjectId(58fed1cd3c888a01983cec9a),Fidelity,128M/8M $309/month,Free Install – Static IP address included,C
+ObjectId(58fed1cd3c888a01983cec9b),Fidelity,5M/512K $65/month,Free Install – Static IP address included,D
+ObjectId(58fed1cd3c888a01983cec9c),Fidelity,10M/1M $85/month,Free Install – Static IP address included,D
+ObjectId(58fed1cd3c888a01983cec9d),Fidelity,25M/4M $145/month,Free Install – Static IP address included,D
+ObjectId(58fed1cd3c888a01983cec9e),Fidelity,75M/6M $345/month,Free Install – Static IP address included,D
+ObjectId(58fed1cd3c888a01983cec9f),Fidelity,128M/8M $545/month,Free Install – Static IP address included,D
+ObjectId(58fed1e13c888a01983ceca0),Service Electric,8 x 2 $99,Free Install – Static IP address included,A
+ObjectId(58fed1e13c888a01983ceca1),Service Electric,12 x 2 $149,Free Install – Static IP address included,A
+ObjectId(58fed1e13c888a01983ceca2),Service Electric,25 x 3 $189,Free Install – Static IP address included,A
+ObjectId(58fed1e13c888a01983ceca3),Service Electric,35 x 3 $209,Free Install – Static IP address included,A
+ObjectId(58fed1e13c888a01983ceca4),Service Electric,50 x 5 $229,Free Install – Static IP address included,A
+ObjectId(58fed1e13c888a01983ceca5),Service Electric,100 x 5 $319,Free Install – Static IP address included,A
+ObjectId(58fed1e13c888a01983ceca6),Service Electric,8 x 2 $99,Free Install – Static IP address included,B
+ObjectId(58fed1e13c888a01983ceca7),Service Electric,12 x 2 $109,Free Install – Static IP address included,B
+ObjectId(58fed1e13c888a01983ceca8),Service Electric,25 x 3 $139,Free Install – Static IP address included,B
+ObjectId(58fed1e13c888a01983ceca9),Service Electric,35 x 3 $149,Free Install – Static IP address included,B
+ObjectId(58fed1e13c888a01983cecaa),Service Electric,50 x 5 $185,Free Install – Static IP address included,B
+ObjectId(58fed1e13c888a01983cecab),Service Electric,100 x 5 $259,Free Install – Static IP address included,B
+ObjectId(58fed1e13c888a01983cecac),Service Electric,8 x 2 $99,Free Install – Static IP address included,C
+ObjectId(58fed1e13c888a01983cecad),Service Electric,12 x 2 $149,Free Install – Static IP address included,C
+ObjectId(58fed1e13c888a01983cecae),Service Electric,25 x 3 $189,Free Install – Static IP address included,C
+ObjectId(58fed1e13c888a01983cecaf),Service Electric,35 x 3 $209,Free Install – Static IP address included,C
+ObjectId(58fed1e13c888a01983cecb0),Service Electric,50 x 5 $229,Free Install – Static IP address included,C
+ObjectId(58fed1e13c888a01983cecb1),Service Electric,100 x 5 $289,Free Install – Static IP address included,C
+ObjectId(58fed1ef3c888a01983cecb2),TDS Baja,20 x 4 $99,Free Install – Static IP address included,A
+ObjectId(58fed1ef3c888a01983cecb3),TDS Baja,45 x 4 $149,Free Install – Static IP address included,A
+ObjectId(58fed1ef3c888a01983cecb4),TDS Baja,60 x 5 $225,Free Install – Static IP address included,A
+ObjectId(58fed1ef3c888a01983cecb5),TDS Baja,100 x 10 $499,Free Install – Static IP address included,A
