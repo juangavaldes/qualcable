@@ -310,15 +310,23 @@ module.exports = function(app) {
 	});
 
 	app.get('/users', function(req, res) {
+		var mangus;
 		if (req.session.user == null || req.session.user.admin== undefined){
 			console.log(req.session);
 	// if user is not logged-in redirect back to login page //
 			res.redirect('/');
 		}	else{
-			res.render('user', {
-				title : 'Manage Users',
-				udata : req.session.user
-			});
+			AM.getAllRecords( function(e, u){
+				if (e){
+					res.status(400).send('users-returned-no-results');
+				}
+				mangus = u;
+				res.render('manage-users', {
+					title : 'Manage Users',
+					mangus : mangus,
+					udata : req.session.user					 
+				});
+			})
 		}
 	});
 
