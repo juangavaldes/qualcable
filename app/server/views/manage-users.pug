@@ -1,0 +1,62 @@
+extends layout
+block content
+	mang=typeof(mangus) != 'undefined' ? mangus : { }
+	ouser=typeof(udata) != 'undefined' ? udata : { }
+	input(type='hidden', value= user._id)#userId
+
+block content
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			ul.nav.navbar-nav.navbar-left
+				a(href='/admin').navbar-btn.btn.btn-default CableQual
+			ul.nav.navbar-nav.navbar-left
+				a(href='/orders').navbar-btn.btn.btn-default Orders		
+			ul.nav.navbar-nav.navbar-right
+				li
+					.navbar-btn#btn-logout.btn.btn-default
+						| Sign Outusers
+	div
+		p
+	#users
+		h2 Manage Users
+			br
+			h6 Enable or Disable Users
+		form(id='users-form', method='put')
+			
+			h6 Look at your results below
+			div.marglftrgt
+				div.table-responsive
+					table#tblmngusers.table-bordered.table-striped.table.tbl-displayed
+						thead
+							tr
+								th Name
+								th Email
+								th Username
+								th Country
+								th Date
+								th Enabled
+						tbody
+							for mag in mangus
+								tr
+									td= mag.name
+									td= mag.email
+									td= mag.user
+									td= mag.country
+									td= mag.date
+									td
+										if mag.enabled == true
+											input(type='checkbox', class='userRad', name='userRad', value=mag._id, checked)
+										else
+											input(type='checkbox', class='userRad', name='userRad', value=mag._id)
+				div.col-md-offset-3.col-md-6
+					button(type='button' )#mngusers-form-btn1.btn.btn-primary.center
+	include modals/form-errors
+	include modals/alert
+	include modals/confirm
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/manage-users.js')
+	script(src='/js/controllers/userController.js')
+	script(src='/js/form-validators/userValidator.js')
