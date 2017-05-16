@@ -10,30 +10,28 @@ block content
 			ul.nav.navbar-nav.navbar-left
 				a(href='/admin').navbar-btn.btn.btn-default CableQual
 			ul.nav.navbar-nav.navbar-left
-				a(href='/orders').navbar-btn.btn.btn-default Manage Users		
+				a(href='/orders').navbar-btn.btn.btn-default Orders		
 			ul.nav.navbar-nav.navbar-right
 				li
 					.navbar-btn#btn-logout.btn.btn-default
-						| Sign Out
+						| Sign Outusers
 	div
 		p
 	#users
 		h2 Manage Users
 			br
 			h6 Enable or Disable Users
-		form(id='users-form', method='post')
+		form(id='users-form', method='put')
 			
 			h6 Look at your results below
 			div.marglftrgt
 				div.table-responsive
-					table#tblorders.table-bordered.table-striped.table.tbl-displayed
+					table#tblmngusers.table-bordered.table-striped.table.tbl-displayed
 						thead
 							tr
-								th ID
 								th Name
 								th Email
 								th Username
-								th Password
 								th Country
 								th Date
 								th Enabled
@@ -43,15 +41,15 @@ block content
 									td= mag.name
 									td= mag.email
 									td= mag.user
-									td= mag.pass
 									td= mag.country
 									td= mag.date
-									td= mag.enabled
 									td
 										if mag.enabled == true
 											input(type='checkbox', class='userRad', name='userRad', value=mag._id, checked)
 										else
 											input(type='checkbox', class='userRad', name='userRad', value=mag._id)
+				div.col-md-offset-3.col-md-6
+					button(type='button' )#mngusers-form-btn1.btn.btn-primary.center
 	include modals/form-errors
 	include modals/alert
 	include modals/confirm

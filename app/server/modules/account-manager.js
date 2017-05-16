@@ -335,3 +335,8 @@ exports.getOrdersByUserId = function(userID, callback)
 		else callback(null, res)
 	});
 }
+
+exports.updateUsersState = function(userID, status, callback)
+{
+	accounts.update({'_id': getObjectId(userID)}, { $set: {'enabled': status}}, callback);	
+}

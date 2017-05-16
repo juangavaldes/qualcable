@@ -22,14 +22,29 @@ block content
 				table.table
 					tr
 						td
-							button(type='button' onclick="location.href='/orders'")#admin-opt-btn1.btn.btn-primary
+							br
 						td
-							button(type='button' onclick="location.href='/users'")#admin-opt-btn2.btn.btn-primary
+							button(type='button' onclick="location.href='/orders'")#admin-opt-btn1.btn.btn-primary.btn-lg
+						td
+							button(type='button' onclick="location.href='/users'")#admin-opt-btn2.btn.btn-primary.btn-lg
+						td
+							br
 					tr
 						td
-							button(type='button')#admin-opt-btn3.btn.btn-primary
+							br
 						td
-							button(type='button' onclick="location.href='/search'")#admin-opt-btn4.btn.btn-primary
+							br
+						td
+							br
+					tr
+						td
+							br
+						td
+							button(type='button')#admin-opt-btn3.btn.btn-primary.btn-lg
+						td
+							button(type='button' onclick="location.href='/search'")#admin-opt-btn4.btn.btn-primary.btn-lg
+						td
+							br
 
 	include modals/form-errors
 	include modals/alert

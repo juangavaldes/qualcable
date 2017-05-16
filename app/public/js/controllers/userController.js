@@ -6,9 +6,31 @@ function UserController()
 // handle user logout //
 	$('#btn-logout').click(function(){ that.attemptLogout(); });
 
-// redirect to homepage when cancel button is clicked //
-	$('#search-form-btn1').click(function(){ window.location.href = '/search';});
+	// confirm ORDER //
+	$('#mngusers-form-btn1').click(function(){$('.modal-confirm').modal('show')});
 
+	// handle order submit 
+	$('.modal-confirm .submit').click(function(){  that.updateUsers(); });
+
+	this.updateUsers = function()
+	{
+		var data = {};		
+		data._ids = $('.userRad').map(function() {return $(this).val();}).get();
+		data.status = $('.userRad').map(function() {return $(this).is(":checked");}).get();
+		$.ajax({
+			url: '/users',
+			type: 'PUT',
+			contentType: 'application/json',
+			data: JSON.stringify(data),
+			success: function(){
+				$('.modal-confirm').modal('hide');		
+		    	that.showUpdateAlert();
+			},
+			error: function(jqXHR){
+				console.log(jqXHR.responseText+' :: '+jqXHR.statusText);
+			}
+		});		
+	} 
 	this.attemptLogout = function()
 	{
 		var that = this;
@@ -32,12 +54,19 @@ function UserController()
 		$('.modal-alert button').click(function(){window.location.href = '/';})
 		setTimeout(function(){window.location.href = '/';}, 3000);
 	}
+	this.showUpdateAlert = function(msg){
+		$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
+		$('.modal-alert .modal-header h4').text('Success!');
+		$('.modal-alert .modal-body p').html('Your order has been updated.');
+		$('.modal-alert').modal('show');
+		$('.modal-alert button').off('click');
+	}
 }
-SearchController.prototype.onUpdateSuccess = function()
+UserController.prototype.onUpdateSuccess = function()
 {
 	$('.modal-alert').modal({ show : false, keyboard : true, backdrop : true });
 	$('.modal-alert .modal-header h4').text('Success!');
-	$('.modal-alert .modal-body p').html('Your search has been submitted.');
+	$('.modal-alert .modal-body p').html('Records have been updated.');
 	$('.modal-alert').modal('show');
 	$('.modal-alert button').off('click');
 }

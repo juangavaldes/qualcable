@@ -19,7 +19,6 @@ function OrdersController()
 		var data = {};		
 		data.status = $('.orderselect').map(function() {return $(this).val();}).get();
 		data._ids = $('.ordersRad').map(function() {return $(this).val();}).get();
-
 		$.ajax({
 			url: '/orders',
 			type: 'POST',

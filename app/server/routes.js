@@ -330,6 +330,19 @@ module.exports = function(app) {
 		}
 	});
 
+	app.put('/users', function(req, res) {
+		if (req.session.user == null || req.session.user.admin== undefined){
+			res.redirect('/');
+		}	else{
+			for(i = 0; i < req.body['_ids'].length; i++){	
+				var ids = req.body['_ids'];
+				var status = req.body['status'];
+				AM.updateUsersState(ids[i], status[i]);
+			}
+			res.status(200).send('ok');
+		}
+	});
+
 	app.post('/refreshOrderTable', function(req, res){
 		AM.getOrdersByOrderID(req.body['_id'], function(e, o){
 			if (e){
